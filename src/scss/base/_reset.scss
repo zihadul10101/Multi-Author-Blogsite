@@ -2,6 +2,7 @@
     --fixed_white:#fff;
     --fixed_dark: #404040;
     --text_color: #2c2f34;
+    --second_bg: #f0f0f0;
 }
 *{
     padding: 0px;
@@ -10,5 +11,11 @@
 }
 body {
     font-family: "Roboto,sans-serif";
-    letter-spacing: 7px;
+    letter-spacing: 0px;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
 }
