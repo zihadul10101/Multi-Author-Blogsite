@@ -1,0 +1,14 @@
+.navbar{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    box-shadow: var(--shadow_color);
+    .row{
+        .col-4{
+            background-color: var(--main_bg);
+        }
+    }
+}
