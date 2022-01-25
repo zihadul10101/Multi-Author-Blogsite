@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import PopularArticle from './PopularArticle';
 
 const Home = () => {
     return (
@@ -27,6 +28,15 @@ const Home = () => {
 
                             </div>
                                 {/* search content end */}
+
+                                {/* PopularArticle start */}
+                                <div className="popular-artical">
+                                    <div className="title">
+                                        <h3>popular article</h3>
+                                    </div>
+                                    <PopularArticle />
+                                </div>
+                                 {/* popular article end */}
                         </div>
                     </div>
                 </div>
