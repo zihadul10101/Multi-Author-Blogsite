@@ -6,9 +6,38 @@
     left: 0;
     top: 0;
     box-shadow: var(--shadow_color);
+    background-color: var(--main_bg);
     .row{
         .col-4{
-            background-color: var(--main_bg);
+           .image-menubar{
+               .menu_icon{
+                   display:flex;
+               }
+               height: 75px;
+               display:flex;
+               justify-content: space-between;
+               align-items: center;
+               a.image{
+                   margin-left: -8px;
+                   width: 170px;
+                   height: 40px;
+                   cursor: pointer;
+                   img{
+                       height: 100%;
+                       width: 100%;
+                   }
+               }
+           }
+        }
+        .col-8{
+            ul.link-list{
+                height: 75px;
+                transition: all 0.5s;
+                display:flex;
+                justify-content: flex-end;
+                align-items: center;
+                grid-column-gap: 8px;
+            }
         }
     }
 }

@@ -2,7 +2,8 @@ import React from 'react';
 import {
     Link
 } from "react-router-dom";
-import {FaFacebookSquare,FaTwitterSquare,FaYoutubeSquare,falinkingSquare, FaGithubSquare} from 'react-icons/fa'
+import {FaFacebookSquare,FaTwitterSquare,FaYoutubeSquare,falinkingSquare, FaGithubSquare} from 'react-icons/fa';
+import {BsList} from 'react-icons/bs';
 const Navbar = () => {
     return (
         <div id="navbar" className="navbar">
@@ -16,6 +17,8 @@ const Navbar = () => {
                                 <img src="https://i.ibb.co/8XQtd3P/blogbg.png" alt="" />
 
                             </Link>
+
+                            <label className="menu_icon" htmlFor="toggle"><BsList /></label>
                         </div>
                     </div>
                     <div className="col-8">
