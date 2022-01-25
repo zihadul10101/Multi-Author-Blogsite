@@ -1,3 +1,44 @@
 .home{
     background-color: var(--second_bg);
+
+    .main-content{
+        .container{
+padding-top: 25px;
+padding-bottom: 25px;
+.row{
+    .col-8{
+
+    }
+    .col-4{
+       .search-category-tag{
+           margin-left: 10px;
+           .search{
+               padding: 15px 10px;
+               text-align: center;
+               background-color: var(--main_bg);
+               box-shadow: var(--shadow_color);
+               h2{
+                   text-transform: uppercase;
+                   margin-bottom: 18px;
+               }
+               .form-group{
+                   .form-control{
+                       padding: 5px;
+                   }
+                   .btn{
+                       background-color: #4ad840;
+                       text-transform: uppercase;
+                       font-weight:400;
+                       transition: all .3s;
+                       &:hover { 
+                           background-color: #2ed223;
+                       }
+                   }
+               }
+           }
+       } 
+    }
+}
+        }
+    }
 }
