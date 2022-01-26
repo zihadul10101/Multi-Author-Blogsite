@@ -37,6 +37,14 @@ const Home = () => {
                                     <PopularArticle />
                                 </div>
                                  {/* popular article end */}
+                                 <div className="flow-facebook">
+                                 <div className="title">
+                                        <h3>FLOWING ME</h3>
+                                    </div>
+                                    <div className="image">
+                                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLocal-Courier-182877200475921%2F&tabs=timeline&width=340&height=148&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2932989300353178"style={{ width:"340px", height:"145px", border:"none",overflow:"hidden", scrolling:"no" ,frameborder:"0", allowfullscreen:"true", allow:"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"}}></iframe>
+                                    </div>
+                                 </div>
                         </div>
                     </div>
                 </div>
