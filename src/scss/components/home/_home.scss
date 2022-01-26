@@ -93,7 +93,7 @@ padding-bottom: 25px;
             background-color: #6AF008;
             margin-bottom: 10px;
             h3{
-                color: #404040;
+                color: #FFFFFF;
                 font-size: 16px;
                 text-transform: uppercase;
                 font-weight: 700;
@@ -103,6 +103,82 @@ padding-bottom: 25px;
             display: flex;
             justify-content:center;
         }
+
+       }
+       .category{
+       box-shadow: var(--shadow_color);
+       background-color:var(--main_bg);
+       margin-top: 22px;
+        .title{
+            padding: 6px 5px;
+            text-align: center;
+            background-color: #e2f52b;
+            margin-bottom: 16px;
+            text-align: center;
+            h3{
+                color: #FFFFFF;
+                font-size: 16px;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            }
+            ul.cate-list {
+                padding:0px 10px 10px 10px;
+                .cate-item{
+                    display: flex;
+                    justify-content:space-between;
+                    padding: 8px 0px;
+                    cursor: pointer;
+                    transition: all 0.5s;
+                    li{
+                        display: flex;
+                        align-items:center;
+                        a{
+                            color: var(--text_color);
+                            font-size:16px;
+                            font-weight:700;
+                            transition: all .5s;
+                            &:hover{
+                                color: #ff9800;
+                                
+                            }
+                        }
+                    }
+                }
+        }
+
+       }
+       .tag {
+        box-shadow: var(--shadow_color);
+        background-color:var(--main_bg);
+        margin-top: 22px;
+
+        .title{
+            padding: 6px 5px;
+            text-align: center;
+            background-color: #03a9f4;
+            margin-bottom: 20px;
+
+            }
+            ul{
+                padding:0px 10px 10px 10px;
+                display:flex;
+                flex-wrap: wrap;
+                grid-gap: 10px;
+                li{
+                     padding: 5px 8px;
+                     background-color: #4caf50;
+                     transition: all .5s;
+                    border-radius: 2px; 
+                    font-weight: 400;
+                    a{
+                        color: #fff;
+                    }
+        &:hover{
+            background-color: #ff9800;
+        }   
+               }
+            }
 
        }
     }
