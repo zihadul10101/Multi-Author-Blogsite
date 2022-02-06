@@ -20,7 +20,7 @@ const HomeArtical = () => {
                     <div className="col-8">
                         <div className="home-artical-details">
                             <div className="title">
-                                <Link to="/">Find Sms Online Uk - Sms Online Uk - top10quest.com</Link>
+                                <Link to="/artical/details/zihad">Find Sms Online Uk - Sms Online Uk - top10quest.com</Link>
                             </div>
                             <div className="name-time">
                                 <span><Link to="/">Zihadul Islam</Link></span>
@@ -31,7 +31,7 @@ const HomeArtical = () => {
                             </div>
                             <div className="read-more">
                                 <button className="read-more-btn">
-                                    <Link to="/">Read More</Link>
+                                    <Link to="/artical/details/zihad">Read More</Link>
                                 </button>
                             </div>
                         </div>
@@ -55,7 +55,7 @@ const HomeArtical = () => {
                     <div className="col-8">
                         <div className="home-artical-details">
                             <div className="title">
-                                <Link to="/">Find Sms Online Uk - Sms Online Uk - top10quest.com</Link>
+                                <Link to="/artical/details/zihad">Find Sms Online Uk - Sms Online Uk - top10quest.com</Link>
                             </div>
                             <div className="name-time">
                                 <span><Link to="/">Zihadul Islam</Link></span>
@@ -66,7 +66,7 @@ const HomeArtical = () => {
                             </div>
                             <div className="read-more">
                                 <button className="read-more-btn">
-                                    <Link to="/">Read More</Link>
+                                    <Link to="/artical/details/zihad">Read More</Link>
                                 </button>
                             </div>
                         </div>
@@ -89,10 +89,10 @@ const HomeArtical = () => {
                     <div className="col-8">
                         <div className="home-artical-details">
                             <div className="title">
-                                <Link to="/">Find Sms Online Uk - Sms Online Uk - top10quest.com</Link>
+                                <Link to="/artical/details/zihad">Find Sms Online Uk - Sms Online Uk - top10quest.com</Link>
                             </div>
                             <div className="name-time">
-                                <span><Link to="/">Zihadul Islam</Link></span>
+                                <span><Link to="/artical/details/zihad">Zihadul Islam</Link></span>
                                 <span>2 jun 2022</span>
                             </div>
                             <div className="artical-text">
@@ -123,7 +123,7 @@ const HomeArtical = () => {
                     <div className="col-8">
                         <div className="home-artical-details">
                             <div className="title">
-                                <Link to="/">Find Sms Online Uk - Sms Online Uk - top10quest.com</Link>
+                                <Link to="/artical/details/zihad">Find Sms Online Uk - Sms Online Uk - top10quest.com</Link>
                             </div>
                             <div className="name-time">
                                 <span><Link to="/">Zihadul Islam</Link></span>
@@ -134,7 +134,7 @@ const HomeArtical = () => {
                             </div>
                             <div className="read-more">
                                 <button className="read-more-btn">
-                                    <Link to="/">Read More</Link>
+                                    <Link to="/artical/details/zihad">Read More</Link>
                                 </button>
                             </div>
                         </div>
