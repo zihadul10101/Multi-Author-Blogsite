@@ -7,6 +7,7 @@ import CategoryArtical from './CategoryArtical';
 import Navbar from './Navbar';
 import PopularArticle from './PopularArticle';
 import TagArtical from './TagArtical';
+import Footer from './Footer';
 
 const Home = ({history}) => {
     const [value,setValue] = useState('');
@@ -130,6 +131,7 @@ history.push(`/artical/search/${value}`);
                 </div>
             </div>
             {/* main section end */}
+            <Footer />
         </div>
     );
 };
