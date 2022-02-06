@@ -38,6 +38,7 @@
            }
        } 
        .popular-artical{
+           margin-left: 10px;
            margin-top: 28px;
            background-color: var(--main_bg);
            box-shadow: var(--shadow_color);
@@ -88,10 +89,11 @@
        }
        .flow-facebook{
         .title{
+            margin-left: 8px;
             padding: 6px 5px;
             text-align: center;
             background-color: #6AF008;
-            margin-bottom: 10px;
+            margin-top: 22px;
             h3{
                 color: #FFFFFF;
                 font-size: 16px;

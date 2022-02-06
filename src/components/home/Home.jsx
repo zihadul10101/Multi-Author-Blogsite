@@ -1,6 +1,7 @@
 import React from 'react';
 import {  FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import HomeArtical from './HomeArtical';
 import Navbar from './Navbar';
 import PopularArticle from './PopularArticle';
 
@@ -13,7 +14,7 @@ const Home = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-8">
-                            <h3>Articles</h3>
+                           <HomeArtical />
                         </div>
                         <div className="col-4">
                             {/* search section start */}

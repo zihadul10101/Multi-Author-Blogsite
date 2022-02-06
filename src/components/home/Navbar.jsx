@@ -18,7 +18,7 @@ const Navbar = () => {
                     <div className="col-4">
                         <div className="image-menubar">
                             <Link className="image" to="/" >
-                                <img src="https://i.ibb.co/8XQtd3P/blogbg.png" alt="" />
+                                <img src="https://i.ibb.co/Qdj6gjd/db.png" alt="" />
                             </Link>
                             <label className="menu_icon" htmlFor="toggle"><BsList /></label>
                         </div>
