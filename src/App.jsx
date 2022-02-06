@@ -8,17 +8,17 @@ import {
 import Home from "./components/home/Home";
 function App() {
   return (
- <Router>
+    <Router>
 
-<Switch>
+      <Switch>
 
-<Route path="/" component={Home} exact />
-
-
-</Switch>
+        <Route path="/" component={Home} exact />
 
 
- </Router>
+      </Switch>
+
+
+    </Router>
   );
 }
 
