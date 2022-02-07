@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { FaChevronRight } from 'react-icons/fa';
+import React, { useState,useRef } from 'react';
+import { FaArrowUp, FaChevronRight } from 'react-icons/fa';
 import { Link, Switch, Route } from 'react-router-dom';
 import HomeArtical from './HomeArtical';
 import ArticalDetails from './ArticalDetails';
@@ -8,16 +8,21 @@ import Navbar from './Navbar';
 import PopularArticle from './PopularArticle';
 import TagArtical from './TagArtical';
 import Footer from './Footer';
+import CreateAt from './CreateAt';
 
 const Home = ({history}) => {
     const [value,setValue] = useState('');
+    const nav= useRef();
     // console.log(value);
     const search =(e)=>{
 history.push(`/artical/search/${value}`);
     }
+    const scrollTop=()=>{
+        nav.current?.scrollIntoView({behavior : 'smooth'})
+    }
     return (
         <div className="home">
-            <Navbar />
+            <Navbar nav={nav} />
             {/* main section start */}
             <div className="main-content">
                 <div className="container">
@@ -132,6 +137,12 @@ history.push(`/artical/search/${value}`);
             </div>
             {/* main section end */}
             <Footer />
+            <CreateAt />
+            <div onClick={scrollTop} id="scroll">
+                <div className="scroll-btn">
+                    <span><FaArrowUp /></span>
+                </div>
+            </div>
         </div>
     );
 };

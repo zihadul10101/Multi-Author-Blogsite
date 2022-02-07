@@ -4,11 +4,11 @@ import {
 } from "react-router-dom";
 import { FaFacebookSquare, FaTwitterSquare, FaYoutubeSquare, FaGithubSquare } from 'react-icons/fa';
 import { BsLinkedin, BsList } from 'react-icons/bs';
-const Navbar = () => {
+const Navbar = ({nav}) => {
     return (
 
         // navbar start
-        <div id="navbar" className="navbar">
+        <div ref={nav} id="navbar" className="navbar">
             {/*globle container */}
             <div className="container">
                 {/* layout row */}
