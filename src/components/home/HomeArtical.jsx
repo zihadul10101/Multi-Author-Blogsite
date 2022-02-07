@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Pagination from './Pagination';
 
 const HomeArtical = () => {
     return (
+        <>
         <div className="home-articals">
             {/* 1st article */}
             <div className="home-artical">
@@ -142,6 +144,8 @@ const HomeArtical = () => {
                 </div>
             </div>
         </div>
+        <Pagination />
+        </>
     );
 };
 
