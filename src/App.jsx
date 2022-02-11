@@ -12,7 +12,6 @@ function App() {
     <Router>
 
       <Switch>
-
         <Route path="/" component={Home} exact />
         <Route path="/register" component={Register} exact />
         <Route path="/artical/:currentPage?" component={Home} exact />
@@ -20,8 +19,6 @@ function App() {
         <Route path="/artical/category/:categorySlug/:currentPage?" component={Home} exact />
         <Route path="/artical/tag/:tagSlug/:currentPage?" component={Home} exact />
         <Route path="/artical/search/:searchValue" component={Home} exact />
-
-
       </Switch>
 
 

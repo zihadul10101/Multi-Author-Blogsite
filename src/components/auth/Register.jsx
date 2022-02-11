@@ -14,7 +14,7 @@ const Register = () => {
                         <h3>Register</h3>
                         <form>
                             {/* userName */}
-                            <div className="from-group">
+                            <div className="form-group">
                                 <label htmlFor="userName">User Name</label>
                                 <div className="icon-input">
                                     <div className="icon"><FaUser /></div>
@@ -23,16 +23,16 @@ const Register = () => {
                                 </div>
                             </div>
                             {/* email */}
-                            <div className="from-group">
+                            <div className="form-group">
                                 <label htmlFor="email">Email</label>
                                 <div className="icon-input">
                                     <div className="icon"><BsAt /></div>
-                                    <input type="email" name='emai' id="emai" placeholder="Emai" className="form-control" />
+                                    <input type="email" name='emai' id="email" placeholder="Emai" className="form-control" />
 
                                 </div>
                             </div>
                             {/* password */}
-                            <div className="from-group">
+                            <div className="form-group">
                                 <label htmlFor="password">Password</label>
                                 <div className="icon-input">
                                     <div className="icon"><FaLock /></div>
@@ -43,7 +43,7 @@ const Register = () => {
                                 <input hidden type="file" name="image" id="reg-image" />
                                 <div className="image-file">
                                     <div className="image">
-
+                                        
                                     </div>
                                     <div className="file-name">
                                         <div className="form-control">
@@ -53,10 +53,10 @@ const Register = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="from-group">
+                            <div className="form-group">
                                 <button className="btn btn-block">Register</button>
                             </div>
-                            <div className="from-group">
+                            <div className="form-group">
                                 <div className="login-page">
                                     <Link to="/login" >Login your account</Link>
                                 </div>

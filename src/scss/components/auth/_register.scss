@@ -1,7 +1,7 @@
 .register{
     height: calc(100vh - 75px);
     width: 100%;
-    background-image: url(http://localhost:3000/designImage/rigster-bg1.jpg);
+    background-image: url(http://localhost:3000/designImage/rigster-bg2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display:flex;
@@ -14,6 +14,15 @@
         display:grid;
         grid-template-columns: repeat(2,1fr);
         align-items: center;
+        .auth{
+            padding: 20px 30px;
+            h3{
+                font-weight:700;
+                color: #404040;
+                font-size: 20px;
+                text-align: center;
+            }
+        }
         .image-logo{
             width: 100%;
             height: 100%;
@@ -25,19 +34,141 @@
                 
             }
         }
-        form{
+        form {
             .form-group{
+                .login-page{
+                    text-align: center;
+                    a{
+                        color: #404040;
+                    }
+                }
+                .icon-input{
+                    position: relative;
+                    display: flex;
+                    align-items:stretch;
+                    width: 100%;
+                    flex-direction: row;
+                    margin-bottom: 0;
+                    .form-control{
+                        height: calc(1.5em + .9rem + 2px);
+                            position: relative;
+                            flex: 1 1 auto;
+                            display:block;
+                            padding: .45rem .9rem;
+                            font-size:.9rem;
+                            line-height:1.5;
+                            color: #6c757d;
+                            background-color: #f1f3fa;
+                            background-clip: padding-box;
+                            border: 1px solid #f1f3fa;
+                            border-radius:.25rem;
+                            transition: border-color .15s ease-in-out;
+                            width: auto;  
+                    }
+                    .icon{
+                        display: flex;
+                        align-items: center;
+                        padding: .45rem .9rem;
+                        font-size:.9rem;
+                        font-weight: 400;
+                        line-height:1.5;
+                        text-align: center;
+                        white-space: nowrap;
+                        border: 1px solid #dee2e6;
+                        border-radius: .25rem;
+                        border-top-left-radius: 0;
+                        border-top-right-radius: 0;
+                        color: #fff;
+                        background-color: #727cf5;
+                        border-color:#727cf5 ;
+                        cursor: pointer;
+                        margin-right: 1px;
+                        transition: all 0.5s;
+
+                    }
+                }
                 label{
                     display: block;
                     margin: 8px 0px;
-                    font-weight: 700;
+                    font-weight: 600;
                 }
-                .btn.btn-block{
+               button.btn.btn-block{
                     margin-top: 20px;
                     padding: 10px;
                     color: #fff;
                     background-color: #fa5c7c;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 400;
+                    cursor: pointer;
+                    border: 1px solid transparent;
+                    font-size:.9rem;
+                    border-radius:.15rem;
+                    transition: all 0.5s;
+                    &:hover{
+                        background-color: #ec4d6d;
+                    }
+                }
+                .image-file{
+                    margin: 18px 0px;
+                    display: flex;
+                    justify-content:space-between;
+                    .image{
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                        border: 1px solid #c2bfbf;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .file-name{
+                        width: calc(100% - 40px);
+                        position: relative;
+                        display:flex;
+                        align-items: stretch;
+                        flex-direction: row;
+                        margin-bottom: 0px;
+                        .form-control{
+                            height: calc(1.5em + .9rem + 2px);
+                            position: relative;
+                            flex: 1 1 auto;
+                            display:block;
+                            padding: .45rem .9rem;
+                            font-size:.9rem;
+                            line-height:1.5;
+                            color: #6c757d;
+                            background-color: #f1f3fa;
+                            background-clip: padding-box;
+                            border: 1px solid #f1f3fa;
+                            border-radius:.25rem;
+                            transition: border-color .15s ease-in-out;
+                            width: auto; 
+                            
+                        }
+                        label{
+                            display:flex;
+                            align-items: center;
+                            font-size:.9rem;
+                            padding:.45rem .9rem;
+                            font-weight:400;
+                            line-height:1.5;
+                            text-align: center;
+                            white-space: nowrap;
+                            border: 1px solid #dee2e6;
+                            border-radius:.25rem;
+                            margin: 0px 0px 0px -3px;
+                            border-top-left-radius: 0;
+                            border-top-right-radius: 0;
+                            color: #fff;
+                            background-color: #727cf5;
+                            cursor: pointer;
+                            transition: all 0.5s;
 
+                        }
+                    }
                 }
             }
         }
