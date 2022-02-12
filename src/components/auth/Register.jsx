@@ -43,7 +43,7 @@ const Register = () => {
                                 <input hidden type="file" name="image" id="reg-image" />
                                 <div className="image-file">
                                     <div className="image">
-                                        
+
                                     </div>
                                     <div className="file-name">
                                         <div className="form-control">
@@ -57,12 +57,12 @@ const Register = () => {
                                 <button className="btn btn-block">Register</button>
                                 <button className="btn btn-block">
                                     <div className="spinner">
-                                    <div className="spinner1"></div>
+                                        <div className="spinner1"></div>
                                         <div className="spinner2"></div>
                                         <div className="spinner3"></div>
                                     </div>
                                 </button>
-                                
+
                             </div>
                             <div className="form-group">
                                 <div className="login-page">

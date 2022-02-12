@@ -1,17 +1,17 @@
 import React from 'react';
 import { BsAt } from 'react-icons/bs';
-import { FaLock,FaGoogle,FaFacebook } from 'react-icons/fa';
+import { FaLock, FaGoogle, FaFacebook } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Navbar from '../home/Navbar';
 const AdminLogin = () => {
     return (
         <>
-          <Navbar />
-          <div className="admin_login">
-              <div className="card">
-                  <div className="auth">
-                      <h3>Admin Login</h3>
-                      <form>
+            <Navbar />
+            <div className="admin_login">
+                <div className="card">
+                    <div className="auth">
+                        <h3>Admin Login</h3>
+                        <form>
                             {/* email */}
                             <div className="form-group">
                                 <label htmlFor="email">Email</label>
@@ -40,15 +40,15 @@ const AdminLogin = () => {
                                     </div>
                                 </button>
                             </div>
-                         
-                            
+
+
                         </form>
-                  </div>
-                  <div className="image-logo">
+                    </div>
+                    <div className="image-logo">
                         <img src="http://localhost:3000/designImage/login.jpg" />
                     </div>
-              </div>
-          </div>
+                </div>
+            </div>
         </>
     );
 };

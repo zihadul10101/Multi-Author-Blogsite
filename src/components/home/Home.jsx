@@ -2,13 +2,13 @@ import React, { useState,useRef } from 'react';
 import { FaArrowUp, FaChevronRight } from 'react-icons/fa';
 import { Link, Switch, Route } from 'react-router-dom';
 import HomeArtical from './HomeArtical';
-import ArticalDetails from './ArticalDetails';
 import CategoryArtical from './CategoryArtical';
 import Navbar from './Navbar';
 import PopularArticle from './PopularArticle';
 import TagArtical from './TagArtical';
 import Footer from './Footer';
 import CreateAt from './CreateAt';
+import ArticleDetails from './ArticleDetails';
 
 const Home = ({history}) => {
     const [value,setValue] = useState('');
@@ -31,7 +31,7 @@ history.push(`/artical/search/${value}`);
                             <Switch>
                                 <Route path="/" component={HomeArtical} exact />
                                 <Route path="/artical/:currentPage?" component={HomeArtical} exact />
-                                <Route path="/artical/details/:slug" component={ArticalDetails} exact />
+                                <Route path="/artical/details/:slug" component={ArticleDetails} exact />
                                 <Route path="/artical/category/:categorySlug/:currentPage?" component={CategoryArtical} exact />
                                 <Route path="/artical/tag/:tagSlug/:currentPage?" component={TagArtical} exact />
                                 <Route path="/artical/search/:searchValue" component={HomeArtical} exact />
