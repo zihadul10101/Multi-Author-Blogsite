@@ -1,4 +1,4 @@
-.register{
+.register, .login , .admin_login{
     height: calc(100vh - 75px);
     width: 100%;
     background-image: url(http://localhost:3000/designImage/rigster-bg2.jpg);
@@ -15,12 +15,75 @@
         grid-template-columns: repeat(2,1fr);
         align-items: center;
         .auth{
+            .login-page{
+                text-align: center;
+                a{
+                    color: #404040;
+                }
+            }
             padding: 20px 30px;
             h3{
                 font-weight:700;
                 color: #404040;
                 font-size: 20px;
                 text-align: center;
+            }
+            .or{
+                position: relative;
+                text-align: center;
+                margin: 12px;
+                &::after,
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width:45%;
+                    height: 1px;
+                    background-color: #404040;
+                    right: 0;
+                    top: 50%;
+                }
+                &::before{
+                   content: "";
+                   left: 0;
+                }
+            }
+            .fb-google-auth{
+                .fb-google-logo{
+                 display: grid;
+                 grid-template-columns: repeat(1,fr);
+                 grid-row-gap:14px;
+                 button{
+                     color: #fff;
+                     display:flex;
+                     justify-content: center;
+                     align-items:center;
+                     font-weight: 400;
+                     border: 1px solid transparent;
+                     font-size: .9rem;
+                     border-radius: .15rem;
+                     transition: all 0.5s;
+                     width: 100%;
+                     padding:.45rem .9rem;
+                     cursor: pointer;
+                     span{
+                         margin-left: 3px;
+                        letter-spacing: .5px; 
+                     }
+                 }
+                 .fb button{
+                     background-color:#7443e9;
+                     &:hover{
+                         background-color: #6d3be0;
+                     }
+                 }   
+                 .google button{
+                     margin-bottom: 8px;
+                     background-color:#f44336;
+                     &:hover{
+                        background-color: #d14014;
+                    }
+                 }   
+                }
             }
         }
         .image-logo{
@@ -36,12 +99,6 @@
         }
         form {
             .form-group{
-                .login-page{
-                    text-align: center;
-                    a{
-                        color: #404040;
-                    }
-                }
                 .icon-input{
                     position: relative;
                     display: flex;

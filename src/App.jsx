@@ -5,6 +5,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import AdminLogin from "./components/auth/AdminLogin";
+import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Home from "./components/home/Home";
 function App() {
@@ -13,7 +15,9 @@ function App() {
 
       <Switch>
         <Route path="/" component={Home} exact />
+        <Route path="/admin/login" component={AdminLogin} exact />
         <Route path="/register" component={Register} exact />
+        <Route path="/login" component={Login} exact />
         <Route path="/artical/:currentPage?" component={Home} exact />
         <Route path="/artical/details/:slug" component={Home} exact />
         <Route path="/artical/category/:categorySlug/:currentPage?" component={Home} exact />
