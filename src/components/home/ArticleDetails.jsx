@@ -4,6 +4,7 @@ import { BsChevronRight } from 'react-icons/bs'
 import { ImLinkedin } from 'react-icons/im'
 import { AiFillTag, AiFillDislike,AiFillLike } from 'react-icons/ai'
 import { FaFacebookSquare, FaGithubSquare, FaTwitterSquare } from 'react-icons/fa';
+import Comment from './Comment';
 const ArticleDetails = () => {
     return (
         <div className="article-details">
@@ -97,6 +98,10 @@ const ArticleDetails = () => {
                     </Link>
                 </div>
             </div>
+            <div className="comment-title">
+                <h3>Article comment</h3>
+            </div>
+            <Comment />
         </div>
     );
 };

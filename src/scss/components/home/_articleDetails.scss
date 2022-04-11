@@ -236,4 +236,16 @@
         }
     }
 }
+.comment-title{
+    display: flex;
+    h3{
+        font-size:16px;
+        text-align: left;
+        margin-bottom: 20px;
+        background-color: #000;
+        color: #fff;
+        padding:8px 18px 8px 10px;
+        border-bottom-right-radius:30px ;
+       }  
+}
 }

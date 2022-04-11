@@ -1,4 +1,4 @@
-import React, { useState,useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { FaArrowUp, FaChevronRight } from 'react-icons/fa';
 import { Link, Switch, Route } from 'react-router-dom';
 import HomeArtical from './HomeArtical';
@@ -10,15 +10,15 @@ import Footer from './Footer';
 import CreateAt from './CreateAt';
 import ArticleDetails from './ArticleDetails';
 
-const Home = ({history}) => {
-    const [value,setValue] = useState('');
-    const nav= useRef();
+const Home = ({ history }) => {
+    const [value, setValue] = useState('');
+    const nav = useRef();
     // console.log(value);
-    const search =(e)=>{
-history.push(`/artical/search/${value}`);
+    const search = (e) => {
+        history.push(`/artical/search/${value}`);
     }
-    const scrollTop=()=>{
-        nav.current?.scrollIntoView({behavior : 'smooth'})
+    const scrollTop = () => {
+        nav.current?.scrollIntoView({ behavior: 'smooth' })
     }
     return (
         <div className="home">
@@ -35,7 +35,7 @@ history.push(`/artical/search/${value}`);
                                 <Route path="/artical/category/:categorySlug/:currentPage?" component={CategoryArtical} exact />
                                 <Route path="/artical/tag/:tagSlug/:currentPage?" component={TagArtical} exact />
                                 <Route path="/artical/search/:searchValue" component={HomeArtical} exact />
-                                
+
                             </Switch>
                         </div>
                         <div className="col-4">
@@ -44,7 +44,7 @@ history.push(`/artical/search/${value}`);
                                 <div className="search">
                                     <h2>Search</h2>
                                     <div className="form-group">
-                                        <input onChange={(e)=>setValue(e.target.value)} className="form-control"type="text"  placeholder="search" />
+                                        <input onChange={(e) => setValue(e.target.value)} className="form-control" type="text" placeholder="search" />
                                     </div>
                                     <div className="form-group">
                                         <button onClick={search} className="btn btn-block">Search</button>
