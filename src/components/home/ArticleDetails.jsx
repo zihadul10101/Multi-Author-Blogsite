@@ -40,7 +40,8 @@ const ArticleDetails = () => {
                     Text messaging, or texting, is the act of composing and sending electronic messages, typically consisting of alphabetic and numeric characters, between two or more users of mobile devices, desktops/laptops, or another type of compatible computer.
                     Text messaging, or texting, is the act of composing and sending electronic messages, typically consisting of alphabetic and numeric characters, between two or more users of mobile devices, desktops/laptops, or another type of compatible computer.
                     Text messaging, or texting, is the act of composing and sending electronic messages, typically consisting of alphabetic and numeric characters, between two or more users of mobile devices, desktops/laptops, or another type of compatible computer.
-                    <p>            <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                    <p>      
+                              <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
                     </p>
                 </p>
             </div>
