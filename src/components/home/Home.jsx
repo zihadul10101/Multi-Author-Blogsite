@@ -44,7 +44,7 @@ history.push(`/artical/search/${value}`);
                                 <div className="search">
                                     <h2>Search</h2>
                                     <div className="form-group">
-                                        <input onChange={(e)=>setValue(e.target.value)} className="form-control"type="text" className="form-control" placeholder="search" />
+                                        <input onChange={(e)=>setValue(e.target.value)} className="form-control"type="text"  placeholder="search" />
                                     </div>
                                     <div className="form-group">
                                         <button onClick={search} className="btn btn-block">Search</button>

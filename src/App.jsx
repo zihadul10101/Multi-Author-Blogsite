@@ -2,8 +2,7 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import AdminLogin from "./components/auth/AdminLogin";
 import Login from "./components/auth/Login";
@@ -12,7 +11,6 @@ import Home from "./components/home/Home";
 function App() {
   return (
     <Router>
-
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/admin/login" component={AdminLogin} exact />
@@ -24,8 +22,6 @@ function App() {
         <Route path="/artical/tag/:tagSlug/:currentPage?" component={Home} exact />
         <Route path="/artical/search/:searchValue" component={Home} exact />
       </Switch>
-
-
     </Router>
   );
 }
