@@ -7,6 +7,7 @@ import {
 import AdminLogin from "./components/auth/AdminLogin";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import Dashborad from "./components/dashbord/Dashborad";
 import Home from "./components/home/Home";
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/artical/category/:categorySlug/:currentPage?" component={Home} exact />
         <Route path="/artical/tag/:tagSlug/:currentPage?" component={Home} exact />
         <Route path="/artical/search/:searchValue" component={Home} exact />
+        <Route path="/dashborad" component={Dashborad} exact />
       </Switch>
     </Router>
   );
