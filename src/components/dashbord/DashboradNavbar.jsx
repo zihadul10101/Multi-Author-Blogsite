@@ -31,10 +31,18 @@ const DashboradNavbar = () => {
                             </div>
                             <UserMessage />
                         </div>
-                    </div>
-                    <label htmlFor="adminInfo">
+                        <label htmlFor="adminInfo">
+                            <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
 
-                    </label>
+                        </label>
+                        <div className="name-time">
+                            <h3>
+                                Zihadul
+                            </h3>
+                            <span> feb 16, 20222</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <AdminInfo />
