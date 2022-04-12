@@ -56,9 +56,89 @@
                     transition: all 0.5s;
                 }
             }
+            .replay-box.show{
+                display:flex;
+                
+            }
+            .replay-box{
+                display:none;
+                // display:flex;
+                flex-direction: column;
+                grid-gap: 12px;
+                .image-input{
+                    margin-top: 8px;
+                    display: flex;
+                    justify-content:start;
+                    grid-gap: 10px;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        border-radius:50%;
+                    }
+                    input{
+                        width: 100%;
+                        outline: none;
+                        border: none;
+                        border-bottom: 1px solid gray;
+                    }
+                }
+                .replay-submit{
+                    display:flex;
+                    justify-content:flex-end;
+                    grid-gap: 8px;
+                    button.calcle{
+                        background-color:rgb(160, 51, 51);
+                    }
+                    .submite,.calcle{
+                        color: #fff;
+                        background-color:#fa5c7c;
+                        display: flex;
+                        justify-content:center;
+                        align-items: center;
+                        font-weight: 400;
+                        cursor: pointer;
+                        border: 1px solid transparent;
+                        padding:5px 10px;
+                        font-size:13px;
+                        border-radius:5px;
+                    }
+                }
+            }
+            .replay-comment{
+                margin-top: 15px;
+                display: flex;
+                justify-content:space-around;
+                .replay-comment-image-name-time{
+                    cursor: pointer;
+                    display:flex;
+                    justify-content:space-between;
+                    grid-gap: 15px; 
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        border-radius:50%;
+                    } 
+                }
+            }
         }
     }
     .action{
         cursor: pointer;
+    }
+}
+.comment-submit{
+    margin-top: 30px;
+    h2{
+        color: #404040;
+    }
+    .form-group{
+        .form-control{
+            height: 130px;
+            padding:15px;
+        }
+        .btn{
+            background-color: #e4820a;
+            color: #fff;
+        }
     }
 }
