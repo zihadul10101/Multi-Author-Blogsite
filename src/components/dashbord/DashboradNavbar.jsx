@@ -15,7 +15,7 @@ const DashboradNavbar = () => {
                     </h2>
                 </div>
                 <div className="dashborad-navbar-right-side">
-                    <h2> <Link to="/">Site View</Link></h2>
+                    <h2> <Link to="/"> <span>Site View</span> </Link></h2>
                     <div className="search">
                         <input type="text" placeholder="search" className="form-control" />
                     </div>
@@ -28,18 +28,18 @@ const DashboradNavbar = () => {
                                         <div className="nCount">5</div>
                                     </span>
                                 </div>
+                                
                             </div>
                             <UserMessage />
                         </div>
                         <label htmlFor="adminInfo">
                             <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
-
                         </label>
                         <div className="name-time">
                             <h3>
                                 Zihadul
                             </h3>
-                            <span> feb 16, 20222</span>
+                            <span> Feb 16, 20222</span>
                         </div>
                     </div>
 

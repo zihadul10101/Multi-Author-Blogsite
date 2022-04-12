@@ -6,7 +6,7 @@ const UserMessage = () => {
             <div>
                 <span>
                     <BsEnvelope />
-                    <div className="nCount">5</div>
+                    <div className="mCount">5</div>
                 </span>
             </div>
         </div>
