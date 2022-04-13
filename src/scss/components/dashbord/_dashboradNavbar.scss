@@ -130,10 +130,10 @@
  }
 }
 .notifications.show{
-    transform:scale(1);
+    // transform:scale(1);
 }
 .message.show{
-    transform:scale(1);
+    // transform:scale(1);
 }
 
 .notifications,.messages{
@@ -148,7 +148,7 @@ padding: 10px;
 box-shadow:0 0 0 0 rgba(90,113,208,.11), 0 4px 16px 0 rgba(167,175,183,.83);
 border: 1px solid 0 0 0 0 rgba(90,113,208,.11), 0 4px 16px 0 rgba(167,175,183,.83);
 border-radius:0px;
-transform:scale(1);
+transform:scale(0);
 top: 58px;
 ul{
     display: flex;
