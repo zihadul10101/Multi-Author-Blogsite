@@ -2,8 +2,38 @@ import React from 'react';
 import { BsFillPeopleFill } from 'react-icons/bs';
 import {Link} from 'react-router-dom';
 import { FaRegCaretSquareRight, FaTag,  FaUser } from 'react-icons/fa'
+import Chart from 'react-apexcharts';
 
 const DashboradIndex = () => {
+    const chartOptions = {
+        series:[
+            {
+                name:'visitors',
+                data:[100,120,90,200,244,324,123,342,321,133]
+            }
+        ],
+        options: {
+            color:['#181ee8','#181ee8'],
+            chart:{
+                background: 'transparent'
+            },
+            dataLabels: {
+                enabled:false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            xaxis: {
+                categories: ['January','February','March','April','May','June','July','August','September','October','November','December']
+            },
+            legend:{
+                position: 'top'
+            },
+            grid: {
+                show: 'false'
+            }
+        }
+    }
     return (
         <div className="dashborad-main-content-elements">
             <div className="dashborad-elements">
@@ -54,6 +84,15 @@ const DashboradIndex = () => {
                         </div>
                     </Link>
                   
+                </div>
+                <div className="card-chart">
+                    <Chart 
+                    options={chartOptions.options}
+                    series={chartOptions.series}
+                    type='bar'
+                    height='100%'
+                    width='100%'
+                    />
                 </div>
             </div>
         </div>
