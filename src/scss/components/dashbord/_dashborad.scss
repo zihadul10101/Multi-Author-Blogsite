@@ -96,6 +96,24 @@
                         text-transform:capitalize;
 
                     }
+                    &::before{
+                        content: "";
+                        width: 100%;
+                        padding-top: 100%;
+                        background-image: linear-gradient(to top right, gray,aqua,);
+                        position:absolute;
+                        left:-50%;
+                        right: 0;
+                        transition: all 0.8s;
+                        border-radius: 50%;
+
+                    }
+                    &:hover::before{
+                        transform: scale(3);
+                    }
+                    &:hover{
+                        color: #fff;
+                    }
                 }
                 }
             }
