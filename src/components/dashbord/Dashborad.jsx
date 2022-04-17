@@ -3,6 +3,7 @@ import DashboradNavbar from './DashboradNavbar';
 import Sidebar from './Sidebar';
 import {Switch,Route} from 'react-router-dom';
 import DashboradIndex from './DashboradIndex';
+import DashboradArtical from './DashboradArtical';
 const Dashborad = () => {
     return (
         <div className="dashborad">
@@ -10,7 +11,8 @@ const Dashborad = () => {
             <div className="dashborad-main-content">
                 <Sidebar />
                 <Switch >
-                    <Route path="/" component={DashboradIndex} />
+                    <Route path="/dashborad" component={DashboradIndex} exact/>
+                    <Route path="/dashborad/all-artical" component={DashboradArtical} exact/>
                 </Switch>
             </div>
         </div>

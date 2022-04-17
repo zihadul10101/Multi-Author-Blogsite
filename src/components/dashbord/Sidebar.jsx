@@ -38,7 +38,7 @@ const Sidebar = () => {
                         <span className='right-icon1'> <BsChevronRight /> </span>
                     </label>
                     <div className="article-categoory">
-                        <Link to="/">
+                        <Link to="/dashborad/all-artical">
                             <span>
                                 <FaEye />
                             </span>

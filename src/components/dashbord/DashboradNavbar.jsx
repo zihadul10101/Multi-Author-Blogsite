@@ -12,7 +12,7 @@ const DashboradNavbar = () => {
                     <label htmlFor="" className='dash'><span>D</span> </label>
                     <label htmlFor="" className='bar'><span> <BsListUl /> </span> </label>
                     <h2>
-                        <Link to="/dashorad">Zihadul Islam</Link>
+                        <Link to="/dashborad">Zihadul Islam</Link>
                     </h2>
                 </div>
                 <div className="dashborad-navbar-right-side">
