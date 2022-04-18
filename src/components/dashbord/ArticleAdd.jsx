@@ -1,10 +1,15 @@
-import React from 'react';
+import React,{useState, useRef, useMemo} from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { BsCardImage } from 'react-icons/bs';
-import joditEditor from 'jodit-react';
+import JoditEditor from 'jodit-react';
 
 const ArticleAdd = () => {
+    const [text,setText] = useState('')
+    const editor = useRef();
+    const config ={
+        readOnly: false,
+    }
     return (
         <div className='add-article'>
             <Helmet>
@@ -65,10 +70,15 @@ const ArticleAdd = () => {
                             <input type="file" id="upload-img" />
                         </div>
                         <label htmlFor="article text">Article text </label>
-                        <joditEditor >
-                            value={"abdhdhh"}
-
-                        </joditEditor>
+                        <JoditEditor
+                        ref={editor}
+                        value={text}
+                        config={config}
+                       tabIndex={1} 
+                       onBlur={newText => setText(newText)}
+                       onChange={newText => {}}
+                         />
+  
                     </div>
                 </form>
             </div>
