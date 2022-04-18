@@ -24,6 +24,7 @@ function App() {
         <Route path="/artical/search/:searchValue" component={Home} exact />
         <Route path="/dashborad" component={Dashborad} exact />
         <Route path="/dashborad/all-artical/:currentPage?" component={Dashborad} exact />
+        <Route path="/dashborad/artical-add/:currentPage?" component={Dashborad} exact />
       </Switch>
     </Router>
   );

@@ -29,7 +29,7 @@ const DashboradArtical = () => {
 
                     </div>
                     <div className="newAdd">
-                        <Link to='/dashborad/add-artical' className="btn">
+                        <Link to='/dashborad/artical-add' className="btn">
                             New Add
                         </Link>
                     </div>

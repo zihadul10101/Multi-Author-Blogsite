@@ -9,10 +9,10 @@ const Sidebar = () => {
     return (
         <div className="dashborad-main-content-sidebar">
             <ul>
-            <input type="checkbox"  id="artical" />
-            <input type="checkbox"  id="category" />
-            <input type="checkbox"  id="tag" />
-            <input type="checkbox"  id="user" />
+                <input type="checkbox" id="artical" />
+                <input type="checkbox" id="category" />
+                <input type="checkbox" id="tag" />
+                <input type="checkbox" id="user" />
 
                 <li>
                     <Link to='/dashborad'>
@@ -44,7 +44,7 @@ const Sidebar = () => {
                             </span>
                             <span>All Article</span>
                         </Link>
-                        <Link>
+                        <Link to='/dashborad/artical-add'>
                             <span>
                                 <FaPlusCircle />
                                 <span>Add Article</span>
@@ -65,16 +65,16 @@ const Sidebar = () => {
                         <span className='right-icon2'> <BsChevronRight /> </span>
                     </label>
                     <div className="categoory-categoory">
-                        <Link to="/">
+                        <Link to='/dashborad/all-artical'>
                             <span>
                                 <FaEye />
                             </span>
                             <span>All Category</span>
                         </Link>
-                        <Link>
+                        <Link to='/dashborad/add-category'>
                             <span>
                                 <FaPlusCircle />
-                                <span>Add categoory</span>
+                                <span>Add category</span>
                             </span>
                         </Link>
 
