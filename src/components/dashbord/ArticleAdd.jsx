@@ -78,7 +78,25 @@ const ArticleAdd = () => {
                        onBlur={newText => setText(newText)}
                        onChange={newText => {}}
                          />
-  
+                          <p>Please Provide artical Title</p>
+
+                    </div>
+                    <div className="form-group">
+<label htmlFor="image"> Image</label>
+<div className="image-select">
+    <label htmlFor="image">Select Image</label>
+    <input type="file" className="form-control" name="image" id="image"/>
+</div>
+<div className="image">
+    <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+</div>
+<p className="error">Please Provide artical Title</p>
+
+                    </div>
+                    <div className="form-group">
+                        <button className="btn btn-block">
+                            Add Article
+                        </button>
                     </div>
                 </form>
             </div>
