@@ -23,7 +23,7 @@ function App() {
         <Route path="/artical/tag/:tagSlug/:currentPage?" component={Home} exact />
         <Route path="/artical/search/:searchValue" component={Home} exact />
         <Route path="/dashborad" component={Dashborad} exact />
-        <Route path="/dashborad/all-artical" component={Dashborad} exact />
+        <Route path="/dashborad/all-artical/:currentPage?" component={Dashborad} exact />
       </Switch>
     </Router>
   );

@@ -18,7 +18,7 @@ const Dashborad = () => {
                 <Sidebar />
                 <Switch >
                     <Route path="/dashborad" component={DashboradIndex} exact/>
-                    <Route path="/dashborad/all-artical" component={DashboradArtical} exact/>
+                    <Route path="/dashborad/all-artical/:currentPage?" component={DashboradArtical} exact/>
                 </Switch>
             </div>
         </div>
