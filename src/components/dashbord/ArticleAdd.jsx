@@ -1,6 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
+import { BsCardImage } from 'react-icons/bs';
+import joditEditor from 'jodit-react';
+
 const ArticleAdd = () => {
     return (
         <div className='add-article'>
@@ -12,7 +15,7 @@ const ArticleAdd = () => {
             <div className="add">
                 <div className="title-show-article">
                     <h2>Add Article</h2>
-                    <Link to='/dashborad/all-artical'>All Article</Link>
+                    <Link className='btn' to='/dashborad/all-artical'>All Article</Link>
                 </div>
                 <form action="">
                     <div className="form-group">
@@ -29,7 +32,8 @@ const ArticleAdd = () => {
                     <button className="btn">Update</button>
                     <div className="form-group">
                         <label htmlFor="category">Category</label>
-                        <select name="category" id="category">
+                        <select className='form-control' name="category" id="category">
+                            <option value="hh">---select artical category</option>
                             <option value="hh">Program</option>
                             <option value="">Algorithms</option>
                             <option value="">Computer</option>
@@ -41,7 +45,9 @@ const ArticleAdd = () => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="tag">Tag</label>
-                        <select name="tag" id="tag">
+                        <select className='form-control' name="tag" id="tag">
+                            <option value="hh">---select artical tag</option>
+
                             <option value="hh">Program</option>
                             <option value="hh">Algorithms</option>
                             <option value="hh">Computer</option>
@@ -50,6 +56,19 @@ const ArticleAdd = () => {
                         </select>
                         <p>Please Provide artical Title</p>
 
+                    </div>
+                    <div className="form-group img-upload">
+                        <div className="upload">
+                            <label htmlFor="upload-img">
+                                <BsCardImage />
+                            </label>
+                            <input type="file" id="upload-img" />
+                        </div>
+                        <label htmlFor="article text">Article text </label>
+                        <joditEditor >
+                            value={"abdhdhh"}
+
+                        </joditEditor>
                     </div>
                 </form>
             </div>
