@@ -22,5 +22,73 @@
           }
       }
     }
+    form{
+        .form-group.img-upload{
+           position: relative;
+           .upload{
+               position: absolute;
+               right:10px;
+               label{
+                   padding:10px;
+                   cursor: pointer;
+                   font-size:20px;
+                   padding-left: 0px;
+               }
+               #upload-img{
+                   display:none;
+               }
+           }
+        }
+        .form-group{
+            .btn{
+                background-color:#1d244e;
+                color: #fff;
+                &:hover{
+                    background-color:#0d2fec;  
+                }
+            }
+            label{
+                color:#404040;
+            }
+            p.error{
+                color:red;
+            }
+            .form-control{
+                margin:4px 0px;
+            }
+            .image-select{
+                margin: 5px 0px 15px 0px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 35px;
+                border: 1px solid #dee2e6;
+                label{
+                    padding:0px 6px;
+                    background-color: #b187ed;
+                    border-color: #b187ed;
+                    color: #fff;
+                    font-weight: 600;
+                    cursor: pointer;
+                    height: 35px;
+                    display: flex;
+                    align-items: center;
+                    &:hover{
+                        background-color: #691ed3;
+                    }
+                }
+                span{
+                    display: flex;
+                    align-items: center; 
+                    padding-left: 8px;
+                    color: #404040; 
+                }
+
+            }
+            #image{
+                display:none;
+            }
+        }
+    }
    }
 }
