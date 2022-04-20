@@ -93,13 +93,13 @@ const Sidebar = () => {
                         <span className='right-icon3'> <BsChevronRight /> </span>
                     </label>
                     <div className="tag-categoory">
-                        <Link to="/">
+                        <Link to="/dashborad/all-tag">
                             <span>
                                 <FaEye />
                             </span>
                             <span>All Tag</span>
                         </Link>
-                        <Link>
+                        <Link to='/dashborad/tag-add'>
                             <span>
                                 <FaPlusCircle />
                                 <span>Add Tag</span>
