@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Pagination from '../home/Pagination'
 import { MdDelete, MdEdit } from 'react-icons/md';
-import { FaRegEye, FaSearch } from 'react-icons/fa';
+import {  FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 const AllCategory = () => {
     return (

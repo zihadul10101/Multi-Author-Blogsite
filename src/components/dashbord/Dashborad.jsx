@@ -13,6 +13,7 @@ import EditCategory from './EditCategory';
 import AllTag from './AllTag';
 import AddTag from './AddTag';
 import EditTag from './EditTag';
+import AllSubAdmin from './AllSubAdmin';
 const Dashborad = () => {
     return (
         <div className="dashborad">
@@ -35,6 +36,7 @@ const Dashborad = () => {
                     <Route path="/dashborad/all-tag/:currentPage?" component={AllTag} exact />
                     <Route path="/dashborad/tag-add" component={AddTag} exact />
                     <Route path="/dashborad/tag/edit/:tagSlug" component={EditTag} exact />
+                    <Route path="/dashborad/all-sub-admin/:currentPage?" component={AllSubAdmin} exact />
 
                 </Switch>
             </div>

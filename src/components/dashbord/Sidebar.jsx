@@ -120,13 +120,13 @@ const Sidebar = () => {
                         <span className='right-icon4'> <BsChevronRight /> </span>
                     </label>
                     <div className="user-categoory">
-                        <Link to="/">
+                        <Link >
                             <span>
                                 <FaEye />
                             </span>
                             <span>All User</span>
                         </Link>
-                        <Link>
+                        <Link to="/dashborad/all-sub-admin">
                             <span>
                                 <FaEye />
                                 <span>Add Sub Admin</span>
