@@ -27,7 +27,7 @@ const AllCategory = () => {
 
                     </div>
                     <div className="newAdd">
-                        <Link to='/dashborad/artical-add' className="btn">
+                        <Link to='/dashborad/category-add' className="btn">
                             Add New
                         </Link>
                     </div>

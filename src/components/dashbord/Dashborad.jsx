@@ -7,6 +7,9 @@ import DashboradArtical from './DashboradArtical';
 import ArticleAdd from './ArticleAdd';
 import { Helmet } from 'react-helmet';
 import AllCategory from './AllCategory';
+import AddCategory from './AddCategory';
+import ArticalEdit from './ArticalEdit';
+import EditCategory from './EditCategory';
 const Dashborad = () => {
     return (
         <div className="dashborad">
@@ -21,8 +24,11 @@ const Dashborad = () => {
                 <Switch >
                     <Route path="/dashborad" component={DashboradIndex} exact />
                     <Route path="/dashborad/all-artical/:currentPage?" component={DashboradArtical} exact />
-                    <Route path="/dashborad/artical-add/:currentPage?" component={ArticleAdd} exact />
+                    <Route path="/dashborad/artical-add" component={ArticleAdd} exact />
+                    <Route path="/dashborad/artical/edit/:articalSlug" component={ArticalEdit} exact />
                     <Route path="/dashborad/all-category/:currentPage?" component={AllCategory} exact />
+                    <Route path="/dashborad/category-add" component={AddCategory} exact />
+                    <Route path="/dashborad/category/edit/:cateSlug" component={EditCategory} exact />
                 </Switch>
             </div>
         </div>

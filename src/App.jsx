@@ -24,8 +24,12 @@ function App() {
         <Route path="/artical/search/:searchValue" component={Home} exact />
         <Route path="/dashborad" component={Dashborad} exact />
         <Route path="/dashborad/all-artical/:currentPage?" component={Dashborad} exact />
-        <Route path="/dashborad/artical-add/:currentPage?" component={Dashborad} exact />
+        <Route path="/dashborad/artical-add" component={Dashborad} exact />
+        <Route path="/dashborad/artical/edit/:articalSlug" component={Dashborad} exact />
         <Route path="/dashborad/all-category/:currentPage?" component={Dashborad} exact />
+        <Route path="/dashborad/category-add" component={Dashborad} exact />
+        <Route path="/dashborad/category/edit/:cateSlug" component={Dashborad} exact />
+
       </Switch>
     </Router>
   );

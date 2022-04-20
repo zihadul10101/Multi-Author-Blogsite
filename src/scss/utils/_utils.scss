@@ -141,8 +141,26 @@ color: var(--text_color);
         }
     }
 }
-.dashborad-artical,.all-category {
+.dashborad-artical,.all-category,.add-category {
     margin-left: 275px;
     padding: 85px 12px 12px 12px;
     transition: all 0.5s;
+}
+
+.title-show-article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a.btn {
+        background-color: #58b15c;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        transition: all 0.5s;
+
+        &:hover {
+            background-color: #39a33e;
+        }
+    }
 }

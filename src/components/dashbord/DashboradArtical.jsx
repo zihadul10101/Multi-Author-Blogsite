@@ -45,7 +45,7 @@ const DashboradArtical = () => {
                             </p>
                             <div className="action">
                                 <span>
-                                    <Link>
+                                    <Link to='/dashborad/artical/edit/kkk'>
                                         <MdEdit />
                                     </Link>
                                 </span>
@@ -68,7 +68,7 @@ const DashboradArtical = () => {
                             </p>
                             <div className="action">
                                 <span>
-                                    <Link>
+                                    <Link to='/dashborad/artical/edit/kkk'>
                                         <MdEdit />
                                     </Link>
                                 </span>
@@ -91,7 +91,7 @@ const DashboradArtical = () => {
                             </p>
                             <div className="action">
                                 <span>
-                                    <Link>
+                                    <Link to='/dashborad/artical/edit/kkk'>
                                         <MdEdit />
                                     </Link>
                                 </span>
@@ -114,7 +114,7 @@ const DashboradArtical = () => {
                             </p>
                             <div className="action">
                                 <span>
-                                    <Link>
+                                    <Link to='/dashborad/artical/edit/kkk'>
                                         <MdEdit />
                                     </Link>
                                 </span>
@@ -137,7 +137,7 @@ const DashboradArtical = () => {
                             </p>
                             <div className="action">
                                 <span>
-                                    <Link>
+                                    <Link to='/dashborad/artical/edit/kkk'>
                                         <MdEdit />
                                     </Link>
                                 </span>
@@ -160,7 +160,7 @@ const DashboradArtical = () => {
                             </p>
                             <div className="action">
                                 <span>
-                                    <Link>
+                                    <Link to='/dashborad/artical/edit/kkk'>
                                         <MdEdit />
                                     </Link>
                                 </span>
@@ -183,7 +183,7 @@ const DashboradArtical = () => {
                             </p>
                             <div className="action">
                                 <span>
-                                    <Link>
+                                    <Link to='/dashborad/artical/edit/kkk'>
                                         <MdEdit />
                                     </Link>
                                 </span>

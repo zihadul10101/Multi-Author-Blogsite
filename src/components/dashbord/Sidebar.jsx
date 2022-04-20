@@ -71,7 +71,7 @@ const Sidebar = () => {
                             </span>
                             <span>All Category</span>
                         </Link>
-                        <Link to='/dashborad/add-category'>
+                        <Link to='/dashborad/category-add'>
                             <span>
                                 <FaPlusCircle />
                                 <span>Add category</span>
