@@ -65,7 +65,7 @@ const Sidebar = () => {
                         <span className='right-icon2'> <BsChevronRight /> </span>
                     </label>
                     <div className="categoory-categoory">
-                        <Link to='/dashborad/all-artical'>
+                        <Link to='/dashborad/all-category'>
                             <span>
                                 <FaEye />
                             </span>

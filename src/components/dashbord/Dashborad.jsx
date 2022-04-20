@@ -6,6 +6,7 @@ import DashboradIndex from './DashboradIndex';
 import DashboradArtical from './DashboradArtical';
 import ArticleAdd from './ArticleAdd';
 import { Helmet } from 'react-helmet';
+import AllCategory from './AllCategory';
 const Dashborad = () => {
     return (
         <div className="dashborad">
@@ -21,6 +22,7 @@ const Dashborad = () => {
                     <Route path="/dashborad" component={DashboradIndex} exact />
                     <Route path="/dashborad/all-artical/:currentPage?" component={DashboradArtical} exact />
                     <Route path="/dashborad/artical-add/:currentPage?" component={ArticleAdd} exact />
+                    <Route path="/dashborad/all-category/:currentPage?" component={AllCategory} exact />
                 </Switch>
             </div>
         </div>
