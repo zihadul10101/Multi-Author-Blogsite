@@ -52,6 +52,29 @@
 
                 }
             }
+            .write-artical-details{
+                h2{
+                    font-size: 20px;
+                    font-weight:600;
+                    margin-bottom: 10px;
+                }
+                .articals{
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    grid-gap: 10px;
+                    .artical{
+                        border:1px solid #c0bcbc;
+                        padding: 10px;
+                        img{
+                            width: 100%;
+                        }
+                        h3 {
+                            font-size:15px;
+                            color: #404040;
+                        }
+                    }
+                }
+            }
         }
     }
 }

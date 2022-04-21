@@ -55,6 +55,39 @@ const SubAdminProfile = () => {
                             </li>
                         </ul>
                     </div>
+                    <div className="write-artical-details">
+                        <h2>Article</h2>
+                        <div className="articals">
+                            <Link className="artical" to='/artical/details/zihad'>
+                                <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor iure temporibus ut est iusto maiores.</h3>
+                            </Link>
+                            <Link className="artical" to='/artical/details/zihad'>
+                                <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor iure temporibus ut est iusto maiores.</h3>
+                            </Link>
+                            <Link className="artical" to='/artical/details/zihad'>
+                                <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor iure temporibus ut est iusto maiores.</h3>
+                            </Link>
+                            <Link className="artical" to='/artical/details/zihad'>
+                                <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor iure temporibus ut est iusto maiores.</h3>
+                            </Link>
+                            <Link className="artical" to='/artical/details/zihad'>
+                                <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor iure temporibus ut est iusto maiores.</h3>
+                            </Link>
+                            <Link className="artical" to='/artical/details/zihad'>
+                                <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor iure temporibus ut est iusto maiores.</h3>
+                            </Link>
+                            <Link className="artical" to='/artical/details/zihad'>
+                                <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor iure temporibus ut est iusto maiores.</h3>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
