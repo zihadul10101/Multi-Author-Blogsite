@@ -34,6 +34,7 @@ function App() {
         <Route path="/dashborad/tag/edit/:tagSlug" component={Dashborad} exact />
         <Route path="/dashborad/all-sub-admin/:currentPage?" component={Dashborad} exact />
         <Route path="/dashborad/all-user/:currentPage?" component={Dashborad} exact />
+        <Route path="/dashborad/sub-admin/profile/:adminId" component={Dashborad} exact />
 
       </Switch>
     </Router>

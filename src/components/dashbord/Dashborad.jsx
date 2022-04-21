@@ -15,6 +15,7 @@ import AddTag from './AddTag';
 import EditTag from './EditTag';
 import AllSubAdmin from './AllSubAdmin';
 import AllUser from './AllUser';
+import SubAdminProfile from './SubAdminProfile';
 const Dashborad = () => {
     return (
         <div className="dashborad">
@@ -39,6 +40,7 @@ const Dashborad = () => {
                     <Route path="/dashborad/tag/edit/:tagSlug" component={EditTag} exact />
                     <Route path="/dashborad/all-sub-admin/:currentPage?" component={AllSubAdmin} exact />
                     <Route path="/dashborad/all-user/:currentPage?" component={AllUser} exact />
+                    <Route path="/dashborad/sub-admin/profile/:adminId" component={SubAdminProfile} exact />
 
                 </Switch>
             </div>
