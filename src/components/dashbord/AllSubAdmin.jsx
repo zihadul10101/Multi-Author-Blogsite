@@ -2,6 +2,7 @@ import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Helmet from 'react-helmet';
+import Pagination from '../home/Pagination'
 const AllSubAdmin = () => {
     const user = 'admin';
     const status = 'block';
@@ -134,6 +135,7 @@ const AllSubAdmin = () => {
                                 </tbody>
                             </table>
                         </div>
+                        <Pagination />
                     </div>
                 </div>
             </div>
