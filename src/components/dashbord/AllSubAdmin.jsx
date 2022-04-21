@@ -33,105 +33,107 @@ const AllSubAdmin = () => {
                     </div>
                 </div>
                 <div className="loading-elements">
-                    <div className="table-wapper">
-                        <table>
-                            <thead>
-                                <tr className="tr">
-                                    <th>No</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Image</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                               <tr>
-                               <td data-label='No'>1</td>
-                                <td data-label='Name'>Zihadul Islam</td>
-                                <td data-label='Email'>Zihadul1010@gmail.com</td>
-                                <td data-label='image' className='image'>
-                                    <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                    <div className="elements">
+                        <div className="table-wapper">
+                            <table>
+                                <thead>
+                                    <tr className="tr">
+                                        <th>No</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Image</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label='No'>1</td>
+                                        <td data-label='Name'>Zihadul Islam</td>
+                                        <td data-label='Email'>Zihadul1010@gmail.com</td>
+                                        <td data-label='image' className='image'>
+                                            <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
 
-                                </td>
-                                <td data-label='Action'>
-                                    {
-                                        user === 'admin' ? status === 'block' ? <span class="ussus">UnBlock</span> : <span class="sus">Block</span> : ''
-                                    }
-                                    <Link to='/dashborad/sub-admin/profile/55'>
-                                    Profile
-                                    </Link>
-                                </td>
-                               </tr>
-                               <tr>
-                               <td data-label='No'>1</td>
-                                <td data-label='Name'>Zihadul Islam</td>
-                                <td data-label='Email'>Zihadul1010@gmail.com</td>
-                                <td data-label='image' className='image'>
-                                    <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                                        </td>
+                                        <td data-label='Action'>
+                                            {
+                                                user === 'admin' ? status === 'block' ? <span class="unsus">UnBlock</span> : <span class="sus">Block</span> : ''
+                                            }
+                                            <Link to='/dashborad/sub-admin/profile/55'>
+                                                Profile
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label='No'>1</td>
+                                        <td data-label='Name'>Zihadul Islam</td>
+                                        <td data-label='Email'>Zihadul1010@gmail.com</td>
+                                        <td data-label='image' className='image'>
+                                            <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
 
-                                </td>
-                                <td data-label='Action'>
-                                    {
-                                        user === 'admin' ? status === 'block' ? <span class="ussus">UnBlock</span> : <span class="sus">Block</span> : ''
-                                    }
-                                    <Link to='/dashborad/sub-admin/profile/55'>
-                                    Profile
-                                    </Link>
-                                </td>
-                               </tr>
-                               <tr>
-                               <td data-label='No'>1</td>
-                                <td data-label='Name'>Zihadul Islam</td>
-                                <td data-label='Email'>Zihadul1010@gmail.com</td>
-                                <td data-label='image' className='image'>
-                                    <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                                        </td>
+                                        <td data-label='Action'>
+                                            {
+                                                user === 'admin' ? status === 'block' ? <span class="unsus">UnBlock</span> : <span class="sus">Block</span> : ''
+                                            }
+                                            <Link to='/dashborad/sub-admin/profile/55'>
+                                                Profile
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label='No'>1</td>
+                                        <td data-label='Name'>Zihadul Islam</td>
+                                        <td data-label='Email'>Zihadul1010@gmail.com</td>
+                                        <td data-label='image' className='image'>
+                                            <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
 
-                                </td>
-                                <td data-label='Action'>
-                                    {
-                                        user === 'admin' ? status === 'block' ? <span class="ussus">UnBlock</span> : <span class="sus">Block</span> : ''
-                                    }
-                                    <Link to='/dashborad/sub-admin/profile/55'>
-                                    Profile
-                                    </Link>
-                                </td>
-                               </tr>
-                               <tr>
-                               <td data-label='No'>1</td>
-                                <td data-label='Name'>Zihadul Islam</td>
-                                <td data-label='Email'>Zihadul1010@gmail.com</td>
-                                <td data-label='image' className='image'>
-                                    <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                                        </td>
+                                        <td data-label='Action'>
+                                            {
+                                                user === 'admin' ? status === 'block' ? <span class="unsus">UnBlock</span> : <span class="sus">Block</span> : ''
+                                            }
+                                            <Link to='/dashborad/sub-admin/profile/55'>
+                                                Profile
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label='No'>1</td>
+                                        <td data-label='Name'>Zihadul Islam</td>
+                                        <td data-label='Email'>Zihadul1010@gmail.com</td>
+                                        <td data-label='image' className='image'>
+                                            <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
 
-                                </td>
-                                <td data-label='Action'>
-                                    {
-                                        user === 'admin' ? status === 'block' ? <span class="ussus">UnBlock</span> : <span class="sus">Block</span> : ''
-                                    }
-                                    <Link to='/dashborad/sub-admin/profile/55'>
-                                    Profile
-                                    </Link>
-                                </td>
-                               </tr>
-                               <tr>
-                               <td data-label='No'>1</td>
-                                <td data-label='Name'>Zihadul Islam</td>
-                                <td data-label='Email'>Zihadul1010@gmail.com</td>
-                                <td data-label='image' className='image'>
-                                    <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                                        </td>
+                                        <td data-label='Action'>
+                                            {
+                                                user === 'admin' ? status === 'block' ? <span class="unsus">UnBlock</span> : <span class="sus">Block</span> : ''
+                                            }
+                                            <Link to='/dashborad/sub-admin/profile/55'>
+                                                Profile
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label='No'>1</td>
+                                        <td data-label='Name'>Zihadul Islam</td>
+                                        <td data-label='Email'>Zihadul1010@gmail.com</td>
+                                        <td data-label='image' className='image'>
+                                            <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
 
-                                </td>
-                                <td data-label='Action'>
-                                    {
-                                        user === 'admin' ? status === 'block' ? <span class="ussus">UnBlock</span> : <span class="sus">Block</span> : ''
-                                    }
-                                    <Link to='/dashborad/sub-admin/profile/55'>
-                                    Profile
-                                    </Link>
-                                </td>
-                               </tr>
-                            </tbody>
-                        </table>
+                                        </td>
+                                        <td data-label='Action'>
+                                            {
+                                                user === 'admin' ? status === 'block' ? <span class="unsus">UnBlock</span> : <span class="sus">Block</span> : ''
+                                            }
+                                            <Link to='/dashborad/sub-admin/profile/55'>
+                                                Profile
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
