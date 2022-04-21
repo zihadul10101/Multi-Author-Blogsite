@@ -120,7 +120,7 @@ const Sidebar = () => {
                         <span className='right-icon4'> <BsChevronRight /> </span>
                     </label>
                     <div className="user-categoory">
-                        <Link >
+                        <Link to='/dashborad/all-user'>
                             <span>
                                 <FaEye />
                             </span>
