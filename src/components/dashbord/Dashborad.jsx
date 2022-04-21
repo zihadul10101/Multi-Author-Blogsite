@@ -16,6 +16,7 @@ import EditTag from './EditTag';
 import AllSubAdmin from './AllSubAdmin';
 import AllUser from './AllUser';
 import SubAdminProfile from './SubAdminProfile';
+import DashboradComments from './DashboradComments';
 const Dashborad = () => {
     return (
         <div className="dashborad">
@@ -41,6 +42,7 @@ const Dashborad = () => {
                     <Route path="/dashborad/all-sub-admin/:currentPage?" component={AllSubAdmin} exact />
                     <Route path="/dashborad/all-user/:currentPage?" component={AllUser} exact />
                     <Route path="/dashborad/sub-admin/profile/:adminId" component={SubAdminProfile} exact />
+                    <Route path="/dashborad/comments/:currentPage?" component={DashboradComments} exact />
 
                 </Switch>
             </div>

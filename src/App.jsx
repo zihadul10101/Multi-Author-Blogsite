@@ -35,6 +35,7 @@ function App() {
         <Route path="/dashborad/all-sub-admin/:currentPage?" component={Dashborad} exact />
         <Route path="/dashborad/all-user/:currentPage?" component={Dashborad} exact />
         <Route path="/dashborad/sub-admin/profile/:adminId" component={Dashborad} exact />
+        <Route path="/dashborad/comments/:currentPage?" component={Dashborad} exact />
 
       </Switch>
     </Router>
