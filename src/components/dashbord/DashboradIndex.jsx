@@ -74,7 +74,7 @@ const DashboradIndex = () => {
                             <span>Tag</span>
                         </div>
                     </Link>
-                    <Link to="/dashborad/sub-admin" className="single-card">
+                    <Link to="/dashborad/all-sub-admin" className="single-card">
                         <div className="card-icon">
                             <FaUser />
                         </div>
