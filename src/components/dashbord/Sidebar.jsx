@@ -135,7 +135,18 @@ const Sidebar = () => {
 
                     </div>
                 </li>
-
+                <li>
+                    <Link to='/dashborad/comments'>
+                        <label htmlFor="">
+                            <h3>
+                                <span>
+                                    <AiFillDashboard />
+                                </span>
+                                <span>Comment</span>
+                            </h3>
+                        </label>
+                    </Link>
+                </li>
             </ul>
         </div>
     );
