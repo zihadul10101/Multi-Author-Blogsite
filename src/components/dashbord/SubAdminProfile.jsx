@@ -40,7 +40,7 @@ const SubAdminProfile = () => {
                                     <span>Zihadul@gmail.com</span>
                                 </li>
                             }
-                            
+
                             <li>
                                 <span>  Role:</span>
                                 <span>Sub Admin</span>
