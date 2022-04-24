@@ -7,7 +7,7 @@ import {admin_login} from '../../store/actions/authAction'
 const AdminLogin = () => {
 const dispatch = useDispatch();
 const {loader,successMessage,errorMessage,userInfo,authenticated} = useSelector(state => state.adminReducer);
-console.log(loader);
+
     const [state, setState] = useState({
         email: '',
         password: ''

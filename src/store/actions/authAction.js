@@ -1,11 +1,13 @@
 import axios from 'axios';
-export const admin_login = (data)=>async (dispatch)=>{
+export const admin_login = (data) => async (dispatch) => {
   dispatch({
-      type: 'LOADER_RUN',
+    type: 'LOADER_RUN',
   })
-    try {
-// const response = await axios.post('')
-   }catch(error) {
-
-   }
+  try {
+    console.log('ok');
+    const response = await axios.post('/rest-api/admin-login', data)
+    console.log(response);
+  } catch (error) {
+    console.log(error.response);
+  }
 }
