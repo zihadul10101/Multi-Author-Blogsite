@@ -4,7 +4,9 @@ import { FaLock, } from 'react-icons/fa';
 import Navbar from '../home/Navbar';
 import {useSelector,useDispatch} from 'react-redux';
 import {admin_login} from '../../store/actions/authAction'
+
 const AdminLogin = () => {
+
 const dispatch = useDispatch();
 const {loader,successMessage,errorMessage,userInfo,authenticated} = useSelector(state => state.adminReducer);
 
@@ -60,8 +62,6 @@ const {loader,successMessage,errorMessage,userInfo,authenticated} = useSelector(
                                    </button>:<button className="btn btn-block">Login</button>
                                }
                             </div>
-
-
                         </form>
                     </div>
                     <div className="image-logo">
