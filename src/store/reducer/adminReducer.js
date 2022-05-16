@@ -9,7 +9,7 @@ const initialState = {
 }
 const DT = (token) => {
     const decodeToken = jwt_decode(token);
-    console.log(decodeToken);
+    // console.log(decodeToken);
     const expiresTime = new Date(decodeToken.exp * 1000);
     if (new Date() > expiresTime) {
         localStorage.removeItem('blog_token');
@@ -50,7 +50,7 @@ export const adminReducer = (state = initialState, action) => {
         return {
             ...state,
             successMessage: ''
-            
+
         }
     }
     if (type === 'LOGIN_FILED') {

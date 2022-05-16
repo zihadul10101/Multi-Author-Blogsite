@@ -10,8 +10,8 @@ export const admin_login = (data) => async (dispatch) => {
     dispatch({
       type: 'LOGIN_SUCCESS',
       payload: {
-        successMessage:response.data.successMessage,
-        token:response.data.token
+        successMessage: response.data.successMessage,
+        token: response.data.token
       }
     })
   } catch (error) {
