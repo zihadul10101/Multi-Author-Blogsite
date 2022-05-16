@@ -6,10 +6,17 @@ export const admin_login = (data) => async (dispatch) => {
   try {
     // console.log('ok');
     const response = await axios.post('http://localhost:4000/rest-api/admin-login', data)
-    console.log(response);
+    localStorage.setItem('blog_token', response.data.token)
+    dispatch({
+      type: 'LOGIN_SUCCESS',
+      payload: {
+        successMessage:response.data.successMessage,
+        token:response.data.token
+      }
+    })
   } catch (error) {
     dispatch({
-      type: 'LOGIN FILED',
+      type: 'LOGIN_FILED',
       payload: {
         error: error.response.data.errorMessage
       }
