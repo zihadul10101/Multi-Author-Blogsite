@@ -1,9 +1,9 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const ProtectedRoute = ({ path, component, exact }) => {
-    
+
     const { userInfo } = useSelector(state => state.adminReducer)
     console.log(userInfo);
     if (!userInfo) {

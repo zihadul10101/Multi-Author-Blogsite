@@ -70,7 +70,5 @@ export const adminReducer = (state = initialState, action) => {
             errorMessage: ''
         }
     }
-
-
     return state;
 }
