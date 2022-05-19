@@ -1,7 +1,10 @@
 const categoryState = {
     loader: false,
     categoryError: '',
-    categorySuccess: ''
+    categorySuccess: '',
+    allCategory:[],
+    perPage:0,
+    categoryCount:0
 }
 
 export const dashboradCategoryReducer = (state = categoryState, action) => {

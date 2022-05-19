@@ -23,7 +23,7 @@ export const add_category = (data) => async (dispatch) => {
 export const get_all_category = (page, searchValue) => async (dispatch) => {
     try {
         // console.log(page);
-        const response = await axios.get(`http://localhost:4000/rest-api/get-category?page=${page}&&searchValue=${searchValue}`)
+        const response = await axios.get(`http://localhost:4000/rest-api/get-category?page=${page}&&searchValue=${searchValue}`,{ withCredentials: true })
         console.log(response.data);
     } catch (error) {
         console.log(error);
