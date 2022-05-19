@@ -5,7 +5,7 @@ export const admin_login = (data) => async (dispatch) => {
   })
   try {
     // console.log('ok');
-    const response = await axios.post('http://localhost:4000/rest-api/admin-login', data)
+    const response = await axios.post('http://localhost:4000/rest-api/admin-login', data,{withCredentials:true});
     localStorage.setItem('blog_token', response.data.token)
     dispatch({
       type: 'LOGIN_SUCCESS',

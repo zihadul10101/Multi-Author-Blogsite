@@ -1,29 +1,58 @@
-import React,{useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
-import{ add_category} from '../../store/actions/Dashborad/categoryAction';
-import {  useDispatch } from 'react-redux';
-
-const AddCategory = () => {
+import { add_category } from '../../store/actions/Dashborad/categoryAction';
+import { useDispatch, useSelector } from 'react-redux';
+import toast, { Toaster } from 'react-hot-toast';
+const AddCategory = ({history}) => {
+    
     const dispatch = useDispatch();
-    const [state,setState] = useState({
+    const { loader, categoryError, categorySuccess } = useSelector(state => state.dashboradCategoryr);
+
+    const [state, setState] = useState({
         categoryName: '',
         categoryDescription: ''
     })
 
-    const inputHendle =(e) => {
+    const inputHendle = (e) => {
         setState({
             ...state,
-            [e.target.name] : e.target.value
+            [e.target.name]: e.target.value
         })
     }
-  
-    const addCategory=(e)=> {
+
+    const addCategory = (e) => {
         e.preventDefault()
         dispatch(add_category(state))
     }
+    useEffect(() => {
+        if (categoryError && categoryError.error) {
+            toast.error(categoryError.error)
+            dispatch({ type: 'CATEGORY_ERROR_MESSAGE' })
+        }
+
+        if (categorySuccess) {
+            toast.success(categorySuccess);
+            dispatch({
+                type: 'CATEGORY_SUCCESS_MESSAGE'
+            })
+            history.push('/dashborad/all-category')
+        }
+
+    }, [categoryError, categorySuccess])
     return (
         <div className="add-category">
+            <Toaster
+                position={'bottom-center'}
+                reverseOrder={false}
+                toastOptions={
+                    {
+                        style: {
+                            fontSize: '15px',
+                        }
+                    }
+                }
+            />
             <Helmet>
                 <title>
                     Category Add
@@ -38,17 +67,27 @@ const AddCategory = () => {
                     <div className="form-group">
                         <label htmlFor="category-name">Category Name</label>
                         <input onChange={inputHendle} type="text" name="categoryName" value={state.categoryName} placeholder="Category Name" id="name" className="form-control" />
-                        <p className="error">Please Provide category name</p>
+                        <p className="error">{categoryError ? categoryError.categoryName : ''}</p>
                     </div>
                     <div className="form-group">
                         <label htmlFor="category-description">Category Name</label>
                         <textarea onChange={inputHendle} type="text" name="categoryDescription" value={state.categoryDescription} placeholder="Category description" id="name" className="form-control" />
-                        <p className="error">Please Provide category description</p>
+                        <p className="error">{categoryError ? categoryError.categoryDescription : ''}</p>
                     </div>
                     <div className="form-group">
-                        <button className="btn btn-block">
-                            Add Category
-                        </button>
+                        {
+                            loader ?
+                                <button className="btn btn-block">
+                                    <div className="spinner">
+                                        <div className="spinner1"></div>
+                                        <div className="spinner2"></div>
+                                        <div className="spinner3"></div>
+                                    </div>
+                                </button> : <button className="btn btn-block">
+                                    Add Category
+                                </button>
+                        }
+
                     </div>
                 </form>
             </div>
