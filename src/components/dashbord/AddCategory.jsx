@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { add_category } from '../../store/actions/Dashborad/categoryAction';
 import { useDispatch, useSelector } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
-const AddCategory = ({history}) => {
-    
+const AddCategory = ({ history }) => {
+
     const dispatch = useDispatch();
     const { loader, categoryError, categorySuccess } = useSelector(state => state.dashboradCategoryr);
 

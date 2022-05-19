@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import Pagination from '../home/Pagination'
 import { MdDelete, MdEdit } from 'react-icons/md';
-import {  FaSearch } from 'react-icons/fa';
-import { Link,useParams } from 'react-router-dom';
+import { FaSearch } from 'react-icons/fa';
+import { Link, useParams } from 'react-router-dom';
+import { get_all_category } from '../../store/actions/Dashborad/categoryAction';
+import { useDispatch } from 'react-redux';
 const AllCategory = () => {
-    const {currentPage} = useParams();
-    console.log(currentPage);
+    const { currentPage } = useParams();
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(get_all_category(currentPage ? currentPage.split('-')[1] : 1))
+    })
     return (
         <div className="all-category">
             <Helmet >
