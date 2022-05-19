@@ -3,8 +3,10 @@ import Helmet from 'react-helmet';
 import Pagination from '../home/Pagination'
 import { MdDelete, MdEdit } from 'react-icons/md';
 import {  FaSearch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
 const AllCategory = () => {
+    const {currentPage} = useParams();
+    console.log(currentPage);
     return (
         <div className="all-category">
             <Helmet >
