@@ -4,7 +4,7 @@ import Pagination from '../home/Pagination'
 import { MdDelete, MdEdit } from 'react-icons/md';
 import { FaSearch } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
-import { get_all_category } from '../../store/actions/Dashborad/categoryAction';
+import { get_all_category,delete_category } from '../../store/actions/Dashborad/categoryAction';
 import { useDispatch, useSelector } from 'react-redux';
 const AllCategory = () => {
     const { currentPage } = useParams();
@@ -56,7 +56,7 @@ const AllCategory = () => {
                                                 <MdEdit />
                                             </Link>
                                         </span>
-                                        <span>
+                                        <span onClick={() =>dispatch(delete_category(category._id))}>
                                             <MdDelete />
                                         </span>
                                     </div>

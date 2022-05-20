@@ -27,13 +27,21 @@ export const get_all_category = (page, searchValue) => async (dispatch) => {
         dispatch({
             type: "DASHBORAD_CATEGORY_GET_SUCCESS",
             payload: {
-              allCategory:response.data.allCategory,
-              perPage:response.data.perPage,
-              categoryCount:response.data.categoryCount
+                allCategory: response.data.allCategory,
+                perPage: response.data.perPage,
+                categoryCount: response.data.categoryCount
             }
         })
     } catch (error) {
         console.log(error);
+    }
+}
+export const delete_category = (id) => async (dispatch) => {
+    try {
+        const response = await axios.get(`http://localhost:4000/rest-api/delete-category/${id}`, { withCredentials: true })
+        console.log(response.data);
+    } catch (error) {
+        console.log(error.response);
     }
 }
 
