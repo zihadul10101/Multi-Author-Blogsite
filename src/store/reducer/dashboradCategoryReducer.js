@@ -15,7 +15,7 @@ export const dashboradCategoryReducer = (state = categoryState, action) => {
             loader: true
         }
     }
-    if (type === 'CATEGORY_ADD_SUCCESS') {
+    if (type === 'CATEGORY_ADD_SUCCESS' || type === 'CATEGORY_DELETE_SUCCESS') {
         return {
             ...state,
             loader: false,

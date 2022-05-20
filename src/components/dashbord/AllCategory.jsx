@@ -6,16 +6,34 @@ import { FaSearch } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
 import { get_all_category,delete_category } from '../../store/actions/Dashborad/categoryAction';
 import { useDispatch, useSelector } from 'react-redux';
+import toast, { Toaster } from 'react-hot-toast';
 const AllCategory = () => {
     const { currentPage } = useParams();
     const dispatch = useDispatch();
-    const { perPage, allCategory, categoryCount } = useSelector(state => state.dashboradCategory)
+    const { perPage, allCategory, categoryCount ,categorySuccess} = useSelector(state => state.dashboradCategory)
 
     useEffect(() => {
+        if(categorySuccess){
+            toast.success(categorySuccess);
+            dispatch({
+                type: 'CATEGORY_SUCCESS_MESSAGE_CLEAR'
+            })
+        }
         dispatch(get_all_category(currentPage ? currentPage.split('-')[1] : 1))
-    }, [currentPage])
+    }, [currentPage,categorySuccess])
     return (
         <div className="all-category">
+              <Toaster
+                position={'bottom-center'}
+                reverseOrder={false}
+                toastOptions={
+                    {
+                        style: {
+                            fontSize: '15px',
+                        }
+                    }
+                }
+            />
             <Helmet >
                 <title>
                     All Category

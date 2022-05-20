@@ -7,7 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const AddCategory = ({ history }) => {
 
     const dispatch = useDispatch();
-    const { loader, categoryError, categorySuccess } = useSelector(state => state.dashboradCategoryr);
+    const { loader, categoryError, categorySuccess } = useSelector(state => state.dashboradCategory);
 
     const [state, setState] = useState({
         categoryName: '',
