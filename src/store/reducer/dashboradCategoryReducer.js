@@ -2,9 +2,9 @@ const categoryState = {
     loader: false,
     categoryError: '',
     categorySuccess: '',
-    allCategory:[],
-    perPage:0,
-    categoryCount:0
+    allCategory: [],
+    perPage: 0,
+    categoryCount: 0
 }
 
 export const dashboradCategoryReducer = (state = categoryState, action) => {
@@ -21,6 +21,15 @@ export const dashboradCategoryReducer = (state = categoryState, action) => {
             loader: false,
             categorySuccess: payload.successMessage,
             categoryError: '',
+        }
+    }
+    if (type === 'DASHBORAD_CATEGORY_GET_SUCCESS') {
+        return {
+            ...state,
+            loader: false,
+            allCategory: payload.allCategory,
+            perPage: payload.perPage,
+            categoryCount: payload.categoryCount
         }
     }
     if (type === 'CATEGORY_SUCCESS_MESSAGE') {
@@ -45,5 +54,6 @@ export const dashboradCategoryReducer = (state = categoryState, action) => {
             categorySuccess: ''
         }
     }
+
     return state;
 }

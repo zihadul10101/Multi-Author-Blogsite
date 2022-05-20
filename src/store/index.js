@@ -4,7 +4,7 @@ import {adminReducer} from './reducer/adminReducer'
 import {dashboradCategoryReducer} from './reducer/dashboradCategoryReducer'
 const rootReducer= combineReducers({
 adminReducer,
-dashboradCategoryr:dashboradCategoryReducer
+dashboradCategory:dashboradCategoryReducer
 });
 const middleware = [ThunkMiddleware];
 

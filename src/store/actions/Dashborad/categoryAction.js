@@ -23,8 +23,15 @@ export const add_category = (data) => async (dispatch) => {
 export const get_all_category = (page, searchValue) => async (dispatch) => {
     try {
         // console.log(page);
-        const response = await axios.get(`http://localhost:4000/rest-api/get-category?page=${page}&&searchValue=${searchValue}`,{ withCredentials: true })
-        console.log(response.data);
+        const response = await axios.get(`http://localhost:4000/rest-api/get-category?page=${page}&&searchValue=${searchValue}`, { withCredentials: true })
+        dispatch({
+            type: "DASHBORAD_CATEGORY_GET_SUCCESS",
+            payload: {
+              allCategory:response.data.allCategory,
+              perPage:response.data.perPage,
+              categoryCount:response.data.categoryCount
+            }
+        })
     } catch (error) {
         console.log(error);
     }
