@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link ,useParams} from 'react-router-dom';
+
 const EditTag = () => {
+    
     return (
         <div className="add-category">
             <Helmet>
                 <title>
-                   Edit Tag
+                    Edit Tag
                 </title>
             </Helmet>
             <div className="added">
@@ -27,7 +29,7 @@ const EditTag = () => {
                     </div>
                     <div className="form-group">
                         <div className="btn btn-block">
-                        Edit Tag
+                            Edit Tag
                         </div>
                     </div>
                 </form>

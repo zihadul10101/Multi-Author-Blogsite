@@ -50,4 +50,7 @@ export const delete_category = (id) => async (dispatch) => {
         console.log(error.response);
     }
 }
+export const edit_category = (categorySulg) => async (dispatch) => {
+console.log(categorySulg);
+}
 

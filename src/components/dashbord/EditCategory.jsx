@@ -1,7 +1,16 @@
-import React from 'react';
+import React,{ useEffect} from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link ,useParams} from 'react-router-dom';
+import { edit_category } from '../../store/actions/Dashborad/categoryAction';
+import { useDispatch, useSelector } from 'react-redux';
+import toast, { Toaster } from 'react-hot-toast';
 const EditCategory = () => {
+    const { cateSlug } = useParams();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(edit_category(cateSlug))
+    }, [cateSlug])
     return (
         <div className="add-category">
             <Helmet>
