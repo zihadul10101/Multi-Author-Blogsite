@@ -37,20 +37,26 @@ export const get_all_category = (page, searchValue) => async (dispatch) => {
     }
 }
 export const delete_category = (id) => async (dispatch) => {
- 
+
     try {
         const response = await axios.delete(`http://localhost:4000/rest-api/delete-category/${id}`, { withCredentials: true })
-      dispatch({
-        type: "CATEGORY_DELETE_SUCCESS",
-        payload: {
-            successMessage: response.data.successMessage
-        }
-      })
+        dispatch({
+            type: "CATEGORY_DELETE_SUCCESS",
+            payload: {
+                successMessage: response.data.successMessage
+            }
+        })
     } catch (error) {
         console.log(error.response);
     }
 }
 export const edit_category = (categorySulg) => async (dispatch) => {
-console.log(categorySulg);
+    try {
+        const response = await axios.get(`http://localhost:4000/rest-api/edit-category/${categorySulg}`, 
+        { withCredentials: true })
+        console.log(response.data);
+    } catch (error) {
+        console.log(error.response);
+    }
 }
 
