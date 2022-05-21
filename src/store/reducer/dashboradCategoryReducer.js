@@ -5,6 +5,7 @@ const categoryState = {
     allCategory: [],
     perPage: 0,
     categoryCount: 0
+    
 }
 
 export const dashboradCategoryReducer = (state = categoryState, action) => {
