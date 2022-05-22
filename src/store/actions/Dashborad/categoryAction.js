@@ -51,10 +51,19 @@ export const delete_category = (id) => async (dispatch) => {
     }
 }
 export const edit_category = (categorySulg) => async (dispatch) => {
+   
     try {
         const response = await axios.get(`http://localhost:4000/rest-api/edit-category/${categorySulg}`, 
         { withCredentials: true })
-        console.log(response.data);
+        dispatch({
+            type : 'EDIT_CATEGORY_GET_SUCCESS',
+            payload : {
+                editCategory : response.data.editCategory
+            }
+        });
+        dispatch({
+            type : 'EDIT_REQUEST_SET'
+        })
     } catch (error) {
         console.log(error.response);
     }
