@@ -5,8 +5,8 @@ const categoryState = {
     allCategory: [],
     perPage: 0,
     categoryCount: 0,
-    editCategory : '',
-    editRequest : false
+    editCategory: '',
+    editRequest: false
 }
 
 export const dashboradCategoryReducer = (state = categoryState, action) => {
@@ -34,22 +34,29 @@ export const dashboradCategoryReducer = (state = categoryState, action) => {
             categoryCount: payload.categoryCount
         }
     }
-    if(type === 'EDIT_CATEGORY_GET_SUCCESS'){
+    if (type === 'EDIT_CATEGORY_GET_SUCCESS') {
         return {
             ...state,
-            editCategory :payload.editCategory,
+            editCategory: payload.editCategory,
         }
     }
-    if(type === 'EDIT_REQUEST_SET'){
+    if (type === 'EDIT_REQUEST_SET') {
         return {
             ...state,
-            editRequest :true,
+            editRequest: true,
         }
     }
     if (type === 'CATEGORY_SUCCESS_MESSAGE') {
         return {
             ...state,
             categorySuccess: '',
+
+        }
+    }
+    if (type === 'EDIT_REQUEST_CLEAR') {
+        return {
+            ...state,
+            editRequest: false
 
         }
     }

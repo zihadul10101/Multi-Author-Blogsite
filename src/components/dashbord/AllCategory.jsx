@@ -64,7 +64,7 @@ const AllCategory = () => {
                     {
                         allCategory.length > 0 ? allCategory.map(category =>
                           
-                                <div className="category">
+                                <div key={category._id} className="category">
                                     <div className="name">
                                        {category.categoryName}
                                     </div>
