@@ -68,4 +68,22 @@ export const edit_category = (categorySulg) => async (dispatch) => {
         console.log(error.response);
     }
 }
+export const updated_category = (id,data) => async (dispatch) => {
+   
+    try {
+        const response = await axios.patch(`http://localhost:4000/rest-api/updated-category/${id}`, data,
+        { withCredentials: true })
+        dispatch({
+            type : 'EDIT_CATEGORY_GET_SUCCESS',
+            payload : {
+                editCategory : response.data.editCategory
+            }
+        });
+        dispatch({
+            type : 'EDIT_REQUEST_SET'
+        })
+    } catch (error) {
+        console.log(error.response);
+    }
+}
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
 import { Link, useParams } from 'react-router-dom';
-import { edit_category } from '../../store/actions/Dashborad/categoryAction';
+import { edit_category ,updated_category} from '../../store/actions/Dashborad/categoryAction';
 import { useDispatch, useSelector } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
 const EditCategory = () => {
@@ -34,7 +34,7 @@ const EditCategory = () => {
 
     const updated = (e) => {
         e.preventDefault()
-        console.log(state);
+        dispatch(updated_category(editCategory._id,state))
     }
     return (
         <div className="add-category">
