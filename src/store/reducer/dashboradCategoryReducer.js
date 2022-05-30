@@ -17,7 +17,7 @@ export const dashboradCategoryReducer = (state = categoryState, action) => {
             loader: true
         }
     }
-    if (type === 'CATEGORY_ADD_SUCCESS' || type === 'CATEGORY_DELETE_SUCCESS') {
+    if (type === 'CATEGORY_ADD_SUCCESS' || type === 'CATEGORY_DELETE_SUCCESS' || type === 'CATEGORY_UPDATED_SUCCESS') {
         return {
             ...state,
             loader: false,
@@ -67,7 +67,7 @@ export const dashboradCategoryReducer = (state = categoryState, action) => {
 
         }
     }
-    if (type === 'CATEGORY_ADD_FAIL') {
+    if (type === 'CATEGORY_ADD_FAIL' || type === 'CATEGORY_UPDATED_FAIL') {
         return {
             ...state,
             loader: false,
