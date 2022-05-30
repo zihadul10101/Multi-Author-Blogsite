@@ -33,7 +33,7 @@ const AddTag = ({ history}) => {
         if (tagSuccess) {
             toast.success(tagSuccess);
             dispatch({
-                type: 'CATEGORY_SUCCESS_MESSAGE'
+                type: 'TAG_SUCCESS_MESSAGE'
             })
             history.push('/dashborad/all-tag')
         }
@@ -65,12 +65,12 @@ const AddTag = ({ history}) => {
                 <form onSubmit={addTag}>
                     <div className="form-group">
                         <label htmlFor="category-name">Tag Name</label>
-                        <input onChange={inputHendle}  value={state.tagName} type="text" name="tagName" placeholder="Category Name" id="name" className="form-control" />
+                        <input onChange={inputHendle}  value={state.tagName} type="text" name="tagName" placeholder="Tag Name" id="name" className="form-control" />
                         <p className="error">{tagError ? tagError.tagName : ''}</p>
                     </div>
                     <div className="form-group">
                         <label htmlFor="category-description">Tag Name</label>
-                        <textarea onChange={inputHendle}  value={state.tagDescription} type="text" name="tagDescription" placeholder="Category description" id="name" className="form-control" />
+                        <textarea onChange={inputHendle}  value={state.tagDescription} type="text" name="tagDescription" placeholder="Tag description" id="name" className="form-control" />
                         <p className="error">{tagError ? tagError.tagDescription : ''}</p>
 
                     </div>

@@ -11,6 +11,7 @@ export const add_tag = (data) => async (dispatch) => {
                 successMessage: response.data.successMessage
             }
         })
+       
     } catch (error) {
         dispatch({
             type: "TAG_ADD_FAIL",
@@ -33,6 +34,7 @@ export const get_all_tag = (page, searchValue) => async (dispatch) => {
                 tagCount: response.data.tagCount
             }
         })
+        console.log(response);
     } catch (error) {
         console.log(error);
     }
