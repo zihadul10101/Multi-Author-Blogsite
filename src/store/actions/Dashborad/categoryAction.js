@@ -22,7 +22,9 @@ export const add_category = (data) => async (dispatch) => {
 }
 export const get_all_category = (page, searchValue) => async (dispatch) => {
     try {
-        // console.log(page);
+        console.log(page);
+        console.log(searchValue);
+
         const response = await axios.get(`http://localhost:4000/rest-api/get-category?page=${page}&&searchValue=${searchValue}`, { withCredentials: true })
         dispatch({
             type: "DASHBORAD_CATEGORY_GET_SUCCESS",

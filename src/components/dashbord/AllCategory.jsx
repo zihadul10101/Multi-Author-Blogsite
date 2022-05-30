@@ -84,7 +84,12 @@ const AllCategory = () => {
                         }
                     </div>
                 </div>
-                <Pagination />
+                <Pagination
+                pageNumber ={currentPage ? currentPage.split('-')[1]:1}
+                parPage = {perPage}
+                itemCount = {categoryCount}
+                path = '/dashborad/all-category'
+                />
             </div>
         </div>
     );
