@@ -2,9 +2,11 @@ import {createStore,compose,applyMiddleware,combineReducers} from 'redux';
 import ThunkMiddleware from 'redux-thunk';
 import {adminReducer} from './reducer/adminReducer'
 import {dashboradCategoryReducer} from './reducer/dashboradCategoryReducer'
+import {dashboradTagReducer} from './reducer/dashboradTagReducer'
 const rootReducer= combineReducers({
 adminReducer,
-dashboradCategory:dashboradCategoryReducer
+dashboradCategory:dashboradCategoryReducer,
+dashboradTag:dashboradTagReducer
 });
 const middleware = [ThunkMiddleware];
 
