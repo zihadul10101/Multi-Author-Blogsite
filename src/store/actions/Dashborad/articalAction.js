@@ -17,19 +17,21 @@ export const get_tag_category = () => async (dispatch) => {
     }
 }
 export const add_articale = (data)=>async(dispatch)=>{
-    
+    // console.log(data.get('title'))
     // dispatch({
     //     type : 'ART_SET_LOADER'
     // })
     try {
+     
         const response = await axios.post('http://localhost:4000/rest-api/add-artical',data,{withCredentials:true});
+        
         // dispatch({
         //     type : 'ARTICLE_ADD_SUCCESS',
         //     payload : {
         //         successMessage : response.data.successMessage
         //     }
         // })
-        console.log(response.data)
+      
     } catch (error) {
         console.log(error)
         // dispatch({
