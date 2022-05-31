@@ -1,15 +1,56 @@
-import React, { useState, useRef, useMemo } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { BsCardImage } from 'react-icons/bs';
 import JoditEditor from 'jodit-react';
+import { useDispatch, useSelector } from "react-redux";
+import { get_tag_category } from "../../store/actions/Dashborad/articalAction";
+import toast, { Toaster } from "react-hot-toast";
 
 const ArticleAdd = () => {
+    const { allCategory, allTag } = useSelector(state => state.dashboradArtical)
+
+    const dispatch = useDispatch();
+    const [updateBtn, setUpdateBtn] = useState(false);
+    const [slug, setSlug] = useState('');
+    const [state, setState] = useState({
+        title: '',
+        category: '',
+        tag: '',
+        image: '',
+    })
+    const inputHendle = (e) => {
+        setState({
+            ...state,
+            [e.target.name]: e.target.value
+        })
+    }
+    const titleHendler = (e) => {
+        setState({
+            ...state,
+            title: e.target.value
+        })
+        const createSlug = e.target.value.trim().split(' ').join('-');
+        setSlug(createSlug)
+    }
+    const slugHendle = (e) => {
+        setSlug(e.target.value);
+        setUpdateBtn(true)
+    }
+    const updateSlug = (e) => {
+        e.preventDefault();
+        const newSlug = slug.trim().split(' ').join('-');
+        setSlug(newSlug)
+        setUpdateBtn(false)
+    }
     const [text, setText] = useState('')
     const editor = useRef();
     const config = {
         readOnly: false,
     }
+    useEffect(() => {
+        dispatch(get_tag_category())
+    }, [])
     return (
         <div className='add-article'>
             <Helmet>
@@ -25,38 +66,34 @@ const ArticleAdd = () => {
                 <form action="">
                     <div className="form-group">
                         <label htmlFor="title">Article Title</label>
-                        <input type="text" name="title" placeholder="Article Title" id="title" className="form-control" />
+                        <input onChange={titleHendler} type="text" value={state.title} name="title" placeholder="Article Title" id="title" className="form-control" />
                         <p className="error">Please Provide artical Title</p>
                     </div>
                     <div className="form-group">
                         <label htmlFor="slug">Artical Slug</label>
-                        <input type="text" placeholder="Artical Slug" className="form-control" name="slug" id="slug" />
+                        <input value={slug} onChange={slugHendle} type="text" placeholder="Artical Slug" className="form-control" name="slug" id="slug" />
                         <p className="error">Please Provide artical Title</p>
 
                     </div>
                     <button className="btn">Update</button>
                     <div className="form-group">
                         <label htmlFor="category">Category</label>
-                        <select className='form-control' name="category" id="category">
+                        <select onChange={inputHendle} className='form-control' value={state.category} name="category" id="category">
                             <option value="hh">---select artical category</option>
-                            <option value="hh">Program</option>
-                            <option value="">Algorithms</option>
-                            <option value="">Computer</option>
-                            <option value="">React</option>
-                            <option value="">IOs</option>
+                            {
+                                allCategory.length > 0 ? allCategory.map((c, index) => <option value={c.tagSlug}>{c.categoryName}</option>) : ''
+                            }
                         </select>
                         <p className="error">Please Provide artical Title</p>
 
                     </div>
                     <div className="form-group">
                         <label htmlFor="tag">Tag</label>
-                        <select className='form-control' name="tag" id="tag">
+                        <select onChange={inputHendle} className='form-control' value={state.tag} name="tag" id="tag">
                             <option value="hh">---select artical tag</option>
-                            <option value="hh">Program</option>
-                            <option value="hh">Algorithms</option>
-                            <option value="hh">Computer</option>
-                            <option value="">React</option>
-                            <option value="">IOs</option>
+                            {
+                                allTag.length > 0 ? allTag.map((t, index) => <option value={t.tagSlug}>{t.tagName}</option>) : ''
+                            }
                         </select>
                         <p className="error">Please Provide artical Title</p>
 
