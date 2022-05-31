@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { BsCardImage } from 'react-icons/bs';
 import JoditEditor from 'jodit-react';
 import { useDispatch, useSelector } from "react-redux";
-import { get_tag_category } from "../../store/actions/Dashborad/articalAction";
+import { get_tag_category,add_articale } from "../../store/actions/Dashborad/articalAction";
 import toast, { Toaster } from "react-hot-toast";
 
 const ArticleAdd = () => {
@@ -19,6 +19,29 @@ const ArticleAdd = () => {
         tag: '',
         image: '',
     })
+    const [image, setImage] = useState({
+        imageName: '',
+        img: ''
+    })
+    const imageHendle = (e) => {
+        // console.log(e.target.files)
+        if (e.target.files.length !== 0) {
+            setState({
+                ...state,
+                image: e.target.files[0]
+            })
+            const imageReader = new FileReader();
+            imageReader.onload = () => {
+                setImage({
+                    ...image,
+                    img: imageReader.result,
+                    imageName: e.target.files[0].name
+                })
+            }
+            imageReader.readAsDataURL(e.target.files[0]);
+        }
+    }
+    // console.log(image)
     const inputHendle = (e) => {
         setState({
             ...state,
@@ -43,6 +66,22 @@ const ArticleAdd = () => {
         setSlug(newSlug)
         setUpdateBtn(false)
     }
+    const add = (e) => {
+        e.preventDefault();
+        const { title, image, category, tag } = state;
+
+        const formData = new FormData();
+
+        formData.append('title', title);
+        formData.append('image', image);
+        formData.append('category', category);
+        formData.append('tag', tag);
+        formData.append('slug', slug);
+        formData.append('text', text);
+
+
+        dispatch(add_articale(formData))
+    }
     const [text, setText] = useState('')
     const editor = useRef();
     const config = {
@@ -63,7 +102,7 @@ const ArticleAdd = () => {
                     <h2>Add Article</h2>
                     <Link className='btn' to='/dashborad/all-artical'>All Article</Link>
                 </div>
-                <form action="">
+                <form onSubmit={add}>
                     <div className="form-group">
                         <label htmlFor="title">Article Title</label>
                         <input onChange={titleHendler} type="text" value={state.title} name="title" placeholder="Article Title" id="title" className="form-control" />
@@ -75,11 +114,12 @@ const ArticleAdd = () => {
                         <p className="error">Please Provide artical Title</p>
 
                     </div>
-                    <button className="btn">Update</button>
-                    <div className="form-group">
+                    {
+                        updateBtn ? <button onClick={updateSlug} className='btn'>Update</button> : ''
+                    }                    <div className="form-group">
                         <label htmlFor="category">Category</label>
                         <select onChange={inputHendle} className='form-control' value={state.category} name="category" id="category">
-                            <option value="hh">---select artical category</option>
+                            <option value="hh">---select artical category---</option>
                             {
                                 allCategory.length > 0 ? allCategory.map((c, index) => <option value={c.tagSlug}>{c.categoryName}</option>) : ''
                             }
@@ -90,7 +130,7 @@ const ArticleAdd = () => {
                     <div className="form-group">
                         <label htmlFor="tag">Tag</label>
                         <select onChange={inputHendle} className='form-control' value={state.tag} name="tag" id="tag">
-                            <option value="hh">---select artical tag</option>
+                            <option value="hh">---select artical tag---</option>
                             {
                                 allTag.length > 0 ? allTag.map((t, index) => <option value={t.tagSlug}>{t.tagName}</option>) : ''
                             }
@@ -120,12 +160,16 @@ const ArticleAdd = () => {
                     <div className="form-group">
                         <label htmlFor="image"> Image</label>
                         <div className="image-select">
-                            <span>Upload Image</span>
+                            {
+                                image.imageName ? <span>{image.imageName}</span> : <span></span>
+                            }
                             <label htmlFor="image">Select Image</label>
-                            <input type="file" className="form-control" name="image" id="image" />
+                            <input onChange={imageHendle} type="file" className="form-control" name="image" id="image" />
                         </div>
                         <div className="image">
-                            <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
+                            {
+                                image.img ? <img src={image.img} alt="" /> : ''
+                            }
                         </div>
                         <p className="error">Please Provide artical Title</p>
 
