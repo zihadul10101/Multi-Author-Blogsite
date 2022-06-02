@@ -4,12 +4,28 @@ import { Link } from 'react-router-dom';
 import { BsCardImage } from 'react-icons/bs';
 import JoditEditor from 'jodit-react';
 import { useDispatch, useSelector } from "react-redux";
-import { get_tag_category,add_articale } from "../../store/actions/Dashborad/articalAction";
+import { get_tag_category, add_articale } from "../../store/actions/Dashborad/articalAction";
 import toast, { Toaster } from "react-hot-toast";
 
-const ArticleAdd = () => {
-    const { allCategory, allTag } = useSelector(state => state.dashboradArtical)
+const ArticleAdd = ({ history }) => {
+    const { allCategory, allTag, loader, articalError, articalSuccess } = useSelector(state => state.dashboradArtical)
 
+    useEffect(() => {
+        if (articalError && articalError.error) {
+            toast.error(articalError.error)
+            dispatch({ type: 'ARTCLE_ADD_FAIL' })
+        }
+
+        if (articalSuccess) {
+
+            toast.success(articalSuccess);
+            dispatch({
+                type: 'ARTCLE_SUCCESS_MESSAGE'
+            })
+            history.push('/dashborad/all-artical')
+        }
+
+    }, [articalError, articalSuccess])
     const dispatch = useDispatch();
     const [updateBtn, setUpdateBtn] = useState(false);
     const [slug, setSlug] = useState('');
@@ -92,6 +108,17 @@ const ArticleAdd = () => {
     }, [])
     return (
         <div className='add-article'>
+            <Toaster
+                position={'bottom-center'}
+                reverseOrder={false}
+                toastOptions={
+                    {
+                        style: {
+                            fontSize: '15px',
+                        }
+                    }
+                }
+            />
             <Helmet>
                 <title>
                     Article Add
@@ -106,13 +133,12 @@ const ArticleAdd = () => {
                     <div className="form-group">
                         <label htmlFor="title">Article Title</label>
                         <input onChange={titleHendler} type="text" value={state.title} name="title" placeholder="Article Title" id="title" className="form-control" />
-                        <p className="error">Please Provide artical Title</p>
+                        <p className="error">{articalError ? articalError.title : ''}</p>
                     </div>
                     <div className="form-group">
                         <label htmlFor="slug">Artical Slug</label>
                         <input value={slug} onChange={slugHendle} type="text" placeholder="Artical Slug" className="form-control" name="slug" id="slug" />
-                        <p className="error">Please Provide artical Title</p>
-
+                        <p className="error">{articalError ? articalError.slug : ''}</p>
                     </div>
                     {
                         updateBtn ? <button onClick={updateSlug} className='btn'>Update</button> : ''
@@ -121,22 +147,20 @@ const ArticleAdd = () => {
                         <select onChange={inputHendle} className='form-control' value={state.category} name="category" id="category">
                             <option value="hh">---select artical category---</option>
                             {
-                                allCategory.length > 0 ? allCategory.map((c, index) => <option value={c.tagSlug}>{c.categoryName}</option>) : ''
+                                allCategory.length > 0 ? allCategory.map((c, index) => <option key={index} value={c.tagSlug}>{c.categoryName}</option>) : ''
                             }
                         </select>
-                        <p className="error">Please Provide artical Title</p>
-
+                        <p className="error">{articalError ? articalError.category : ''}</p>
                     </div>
                     <div className="form-group">
                         <label htmlFor="tag">Tag</label>
                         <select onChange={inputHendle} className='form-control' value={state.tag} name="tag" id="tag">
                             <option value="hh">---select artical tag---</option>
                             {
-                                allTag.length > 0 ? allTag.map((t, index) => <option value={t.tagSlug}>{t.tagName}</option>) : ''
+                                allTag.length > 0 ? allTag.map((t, index) => <option key={index} value={t.tagSlug}>{t.tagName}</option>) : ''
                             }
                         </select>
-                        <p className="error">Please Provide artical Title</p>
-
+                        <p className="error">{articalError ? articalError.tag : ''}</p>
                     </div>
                     <div className="form-group img-upload">
                         <div className="upload">
@@ -154,8 +178,7 @@ const ArticleAdd = () => {
                             onBlur={newText => setText(newText)}
                             onChange={newText => { }}
                         />
-                        <p className="error">Please Provide artical Title</p>
-
+                        <p className="error">{articalError ? articalError.text : ''}</p>
                     </div>
                     <div className="form-group">
                         <label htmlFor="image"> Image</label>
@@ -171,13 +194,22 @@ const ArticleAdd = () => {
                                 image.img ? <img src={image.img} alt="" /> : ''
                             }
                         </div>
-                        <p className="error">Please Provide artical Title</p>
-
+                        <p className="error">{articalError ? articalError.image : ''}</p>
                     </div>
                     <div className="form-group">
-                        <button className="btn btn-block">
-                            Add Article
-                        </button>
+                        {
+                            loader ?
+                                <button className="btn btn-block">
+                                    <div className="spinner">
+                                        <div className="spinner1"></div>
+                                        <div className="spinner2"></div>
+                                        <div className="spinner3"></div>
+                                    </div>
+                                </button> : <button className="btn btn-block">
+                                    Add Artical
+                                </button>
+                        }
+
                     </div>
                 </form>
             </div>

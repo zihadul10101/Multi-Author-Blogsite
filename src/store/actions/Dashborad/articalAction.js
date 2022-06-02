@@ -16,29 +16,29 @@ export const get_tag_category = () => async (dispatch) => {
         console.log(error.response)
     }
 }
-export const add_articale = (data)=>async(dispatch)=>{
-    // console.log(data.get('title'))
-    // dispatch({
-    //     type : 'ART_SET_LOADER'
-    // })
+export const add_articale = (data) => async (dispatch) => {
+
+    dispatch({
+        type: 'ART_SET_LOADER'
+    })
     try {
-     
-        const response = await axios.post('http://localhost:4000/rest-api/add-artical',data,{withCredentials:true});
-        
-        // dispatch({
-        //     type : 'ARTICLE_ADD_SUCCESS',
-        //     payload : {
-        //         successMessage : response.data.successMessage
-        //     }
-        // })
-      
+
+        const response = await axios.post('http://localhost:4000/rest-api/add-artical', data, { withCredentials: true });
+        console.log(response);
+        dispatch({
+            type: 'ARTICLE_ADD_SUCCESS',
+            payload: {
+                successMessage: response.data.successMessage
+            }
+        })
+
     } catch (error) {
-        console.log(error)
-        // dispatch({
-        //     type : 'ARTCLE_ADD_FAIL',
-        //     payload :{
-        //         errorMessage :  error.response.data.errorMessage
-        //     }
-        // })
+
+        dispatch({
+            type: 'ARTCLE_ADD_FAIL',
+            payload: {
+                errorMessage: error.response.data.errorMessage
+            }
+        })
     }
 }
