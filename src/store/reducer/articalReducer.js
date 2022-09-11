@@ -2,7 +2,7 @@ const initState = {
     loader: false,
     articalError: '',
     articalSuccess: '',
-    allArtical: [],
+    allArticle: [],
     perPage: 0,
     articalCount: 0,
     editArtical: '',
@@ -42,11 +42,19 @@ export const articalReducer = (state = initState, action) => {
             articalSuccess: ''
         }
     }
-    if (type === 'ARTCLE_SUCCESS_MESSAGE') {
+    if (type === 'ARTCLE_SUCCESS_MESSAGE_CLEAR') {
         return {
             ...state,
-            categorySuccess: '',
+            articalSuccess: '',
 
+        }
+    }
+    if (type === 'DASH_ARTICLE_GET_SUCCESS') {
+        return {
+            ...state,
+            allArticle: payload.allArticle,
+            parPage: payload.parPage,
+            articleCount: payload.articleCount
         }
     }
 

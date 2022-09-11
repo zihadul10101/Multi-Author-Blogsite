@@ -42,7 +42,7 @@ const AllCategory = () => {
             <div className="show-category-action">
                 <div className="numOf-search-newAdd">
                     <div className="numOf">
-                        <h2>All Category(22)</h2>
+                        <h2>All Category{allCategory.length}</h2>
                     </div>
                     <div className="searchOf">
                         <div className="search">

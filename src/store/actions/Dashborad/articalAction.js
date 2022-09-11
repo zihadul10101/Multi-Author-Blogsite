@@ -24,7 +24,7 @@ export const add_articale = (data) => async (dispatch) => {
     try {
 
         const response = await axios.post('http://localhost:4000/rest-api/add-artical', data, { withCredentials: true });
-        console.log(response);
+        // console.log(response);
         dispatch({
             type: 'ARTICLE_ADD_SUCCESS',
             payload: {
@@ -33,7 +33,6 @@ export const add_articale = (data) => async (dispatch) => {
         })
 
     } catch (error) {
-
         dispatch({
             type: 'ARTCLE_ADD_FAIL',
             payload: {
@@ -41,4 +40,20 @@ export const add_articale = (data) => async (dispatch) => {
             }
         })
     }
+}
+export const get_all_artical = (page, searchValue) => async (dispatch) => {
+   try {
+    const response = await axios.get(`http://localhost:4000/rest-api/get-artical?page=${page}&&searchValue=${searchValue}`, { withCredentials: true })
+    dispatch({
+        type : 'DASH_ARTICLE_GET_SUCCESS',
+        payload :{
+            allArticle : response.data.allArticle,
+            articleCount : response.data.articleCount,
+            parPage : response.data.parPage,
+        }
+    })
+   } catch (error) {
+    console.log(error)
+    console.log(error.response)
+   }
 }

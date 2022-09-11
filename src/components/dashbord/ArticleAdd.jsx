@@ -20,7 +20,7 @@ const ArticleAdd = ({ history }) => {
 
             toast.success(articalSuccess);
             dispatch({
-                type: 'ARTCLE_SUCCESS_MESSAGE'
+                type: 'ARTCLE_SUCCESS_MESSAGE_CLEAR'
             })
             history.push('/dashborad/all-artical')
         }
@@ -95,7 +95,7 @@ const ArticleAdd = ({ history }) => {
         formData.append('slug', slug);
         formData.append('text', text);
 
-
+console.log(formData);
         dispatch(add_articale(formData))
     }
     const [text, setText] = useState('')
