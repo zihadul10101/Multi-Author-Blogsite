@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import { FaRegEye, FaSearch } from 'react-icons/fa';
 import { MdDelete, MdEdit } from 'react-icons/md';
 import { Link, useParams } from 'react-router-dom';
-import { htmlToText } from 'html-to-text';
+import htmlToText from "react-html-parser";
 import Pagiation from '../home/Pagination';
 import { useDispatch, useSelector } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
@@ -16,7 +16,7 @@ const DashboradArtical = () => {
     useEffect(() => {
         dispatch(get_all_artical(currentPage ? currentPage.split('-')[1] : 1))
     }, [currentPage, dispatch])
-    console.log('artical data',allArticle);
+    ;
     const text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium temporibus ab repudiandae eaque dolores at aut mollitia sunt nesciunt consequuntur.'
     return (
         <div className="dashborad-artical">
@@ -47,14 +47,12 @@ const DashboradArtical = () => {
                 </div>
                 <div className="height-70vh">
                     <div className="articles">
-                       
-                        <div className="article">
-                            <img src="https://i.ibb.co/WpVNgJc/react-1.jpg" alt="" />
-                            <Link to="/artical/details/ggg">Lorem ipsum dolor sit amet.</Link>
-
-                            <p>
-                                {text}
-                            </p>
+                    {
+                            allArticle.length > 0 ? allArticle.map((art, index) =>
+                            <div className="article">
+                            <img src={`http://localhost:3000/articalImage/${art.image}`} alt="" />
+                            <Link to={`/artical/details/${art.slug}`}>{htmlToText(art.title.slice(0, 30))}</Link>
+                            <p>{htmlToText(art.articleText.slice(0, 50))}</p>
                             <div className="action">
                                 <span>
                                     <Link to='/dashborad/artical/edit/kkk'>
@@ -70,14 +68,24 @@ const DashboradArtical = () => {
                                     <MdDelete />
                                 </span>
                             </div>
-                        </div>
+                        </div>):'Article Not Found'
+                    }
+                     
                       
                        
                     </div>
                   
                   
                 </div>
-                <Pagiation />
+              
+                {
+                    articleCount === 0 || articleCount < parPage ? "" : <Pagiation
+                        pageNumber={currentPage ? currentPage.split('-')[1] : 1}
+                        parPage={parPage}
+                        itemCount={articleCount}
+                        path='/dashborad/all-artical'
+                    />
+                }
             </div>
         </div>
     );
