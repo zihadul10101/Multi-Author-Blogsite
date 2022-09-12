@@ -41,9 +41,9 @@ export const add_articale = (data) => async (dispatch) => {
         })
     }
 }
-export const get_all_artical = (page, searchValue) => async (dispatch) => {
+export const get_all_artical = (currentPage, searchValue) => async (dispatch) => {
    try {
-    const response = await axios.get(`http://localhost:4000/rest-api/get-artical?page=${page}&&searchValue=${searchValue}`, { withCredentials: true })
+    const response = await axios.get(`http://localhost:4000/rest-api/get-artical?page=${currentPage}&&searchValue=${searchValue}`, { withCredentials: true })
     dispatch({
         type : 'DASH_ARTICLE_GET_SUCCESS',
         payload :{

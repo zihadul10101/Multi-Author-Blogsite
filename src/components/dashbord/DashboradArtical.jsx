@@ -55,9 +55,7 @@ const DashboradArtical = () => {
                             <p>{htmlToText(art.articleText.slice(0, 50))}</p>
                             <div className="action">
                                 <span>
-                                    <Link to='/dashborad/artical/edit/kkk'>
-                                        <MdEdit />
-                                    </Link>
+                                <Link to={`/dashborad/artical/edit/${art.slug}`}><MdEdit /></Link>
                                 </span>
                                 <span>
                                     <Link>
@@ -78,14 +76,20 @@ const DashboradArtical = () => {
                   
                 </div>
               
-                {
+                {/* {
                     articleCount === 0 || articleCount < parPage ? "" : <Pagiation
                         pageNumber={currentPage ? currentPage.split('-')[1] : 1}
                         parPage={parPage}
                         itemCount={articleCount}
                         path='/dashborad/all-artical'
                     />
-                }
+                } */}
+                <Pagiation
+                        pageNumber={currentPage ? currentPage.split('-')[1] : 1}
+                        parPage={parPage}
+                        itemCount={articleCount}
+                        path='/dashborad/all-artical'
+                    />
             </div>
         </div>
     );

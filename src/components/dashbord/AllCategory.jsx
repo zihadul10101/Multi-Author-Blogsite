@@ -46,8 +46,7 @@ const AllCategory = () => {
                     </div>
                     <div className="searchOf">
                         <div className="search">
-                            <input type="text" placeholder="search Artical" className="form-control" />
-                            <span>
+                        <input onChange={(e)=>dispatch(get_all_category(currentPage ? currentPage.split('-')[1] : 1,e.target.value))} type="text" placeholder='search article' className="form-control" />                            <span>
                                 <FaSearch />
                             </span>
                         </div>
