@@ -7,17 +7,23 @@ import htmlToText from "react-html-parser";
 import Pagiation from '../home/Pagination';
 import { useDispatch, useSelector } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
-import { get_all_artical, delete_artical } from '../../store/actions/Dashborad/articalAction';
+import { get_all_article, delete_article } from '../../store/actions/Dashborad/articalAction';
 
 const DashboradArtical = () => {
     const { currentPage } = useParams();
     const dispatch = useDispatch();
     const { allArticle, parPage, articleCount, articleSuccessMessage } = useSelector(state => state.dashboradArtical)
     useEffect(() => {
-        dispatch(get_all_artical(currentPage ? currentPage.split('-')[1] : 1))
+        dispatch(get_all_article(currentPage ? currentPage.split('-')[1] : 1))
     }, [currentPage, dispatch])
     ;
-    const text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium temporibus ab repudiandae eaque dolores at aut mollitia sunt nesciunt consequuntur.'
+    useEffect(() => {
+        if (articleSuccessMessage) {
+            toast.success(articleSuccessMessage)
+            dispatch({ type: 'ART_SUCCESS_MESSAGE_CLEAR' })
+            dispatch(get_all_article(currentPage ? currentPage.split('-')[1] : 1, ''))
+        }
+    }, [dispatch, articleSuccessMessage])
     return (
         <div className="dashborad-artical">
             <Helmet >
@@ -32,7 +38,7 @@ const DashboradArtical = () => {
                     </div>
                     <div className="searchOf">
                         <div className="search">
-                            <input type="text" onChange={(e) => dispatch(get_all_artical(currentPage ? currentPage.split('-')[1] : 1, e.target.value))} placeholder="search Artical" className="form-control" />
+                            <input type="text" onChange={(e) => dispatch(get_all_article(currentPage ? currentPage.split('-')[1] : 1, e.target.value))} placeholder="search Artical" className="form-control" />
                             <span>
                                 <FaSearch />
                             </span>
@@ -62,9 +68,7 @@ const DashboradArtical = () => {
                                         <FaRegEye />
                                     </Link>
                                 </span>
-                                <span>
-                                    <MdDelete />
-                                </span>
+                                <span onClick={() => dispatch(delete_article(art._id))}><MdDelete /></span>
                             </div>
                         </div>):'Article Not Found'
                     }
@@ -76,20 +80,15 @@ const DashboradArtical = () => {
                   
                 </div>
               
-                {/* {
+                 {
                     articleCount === 0 || articleCount < parPage ? "" : <Pagiation
                         pageNumber={currentPage ? currentPage.split('-')[1] : 1}
                         parPage={parPage}
                         itemCount={articleCount}
                         path='/dashborad/all-artical'
                     />
-                } */}
-                <Pagiation
-                        pageNumber={currentPage ? currentPage.split('-')[1] : 1}
-                        parPage={parPage}
-                        itemCount={articleCount}
-                        path='/dashborad/all-artical'
-                    />
+                }
+              
             </div>
         </div>
     );
