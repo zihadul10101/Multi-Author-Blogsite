@@ -11,7 +11,7 @@ const AllTag = () => {
     const { currentPage } = useParams();
     const dispatch = useDispatch();
     const { perPage, allTag, tagCount, tagSuccess } = useSelector(state => state.dashboradTag)
-    console.log(allTag.tagName)
+  
     useEffect(() => {
         if (tagSuccess) {
             toast.success(tagSuccess);
@@ -84,12 +84,15 @@ const AllTag = () => {
 
                     </div>
                 </div>
-                <Pagination
+                 
+                {
+                    tagCount === 0 || tagCount < perPage ? "" :   <Pagination
                     pageNumber={currentPage ? currentPage.split('-')[1] : 1}
                     parPage={perPage}
                     itemCount={tagCount}
                     path='/dashborad/all-tag'
-                />
+                /> }
+              
             </div>
         </div>
     );
