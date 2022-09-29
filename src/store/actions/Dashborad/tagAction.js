@@ -34,7 +34,7 @@ export const get_all_tag = (page, searchValue) => async (dispatch) => {
                 tagCount: response.data.tagCount
             }
         })
-        console.log(response);
+     
     } catch (error) {
         console.log(error);
     }

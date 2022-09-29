@@ -26,6 +26,17 @@ const DashboradArtical = () => {
     }, [dispatch, articleSuccessMessage])
     return (
         <div className="dashborad-artical">
+             <Toaster
+                position={'bottom-center'}
+                reverseOrder={false}
+                toastOptions={
+                    {
+                        style: {
+                            fontSize: '15px',
+                        }
+                    }
+                }
+            />
             <Helmet >
                 <title>
                     All Article
