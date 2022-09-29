@@ -1,8 +1,8 @@
 import axios from 'axios'
+
 export const get_tag_category = () => async (dispatch) => {
 
     try {
-
         const response = await axios.get('http://localhost:4000/rest-api/get-tag-category', { withCredentials: true });
 
         dispatch({

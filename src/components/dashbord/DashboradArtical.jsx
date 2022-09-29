@@ -34,7 +34,7 @@ const DashboradArtical = () => {
             <div className="artical-action-pagination">
                 <div className="numOf-search-newAdd">
                     <div className="numOf">
-                        <h2>All Article(22)</h2>
+                        <h2>All Article({allArticle.length})</h2>
                     </div>
                     <div className="searchOf">
                         <div className="search">

@@ -42,7 +42,7 @@ const AllCategory = () => {
             <div className="show-category-action">
                 <div className="numOf-search-newAdd">
                     <div className="numOf">
-                        <h2>All Category{allCategory.length}</h2>
+                        <h2>All Category({allCategory.length})</h2>
                     </div>
                     <div className="searchOf">
                         <div className="search">
@@ -83,12 +83,17 @@ const AllCategory = () => {
                         }
                     </div>
                 </div>
-                <Pagination
-                pageNumber ={currentPage ? currentPage.split('-')[1]:1}
-                parPage = {perPage}
-                itemCount = {categoryCount}
-                path = '/dashborad/all-category'
-                />
+
+                {
+                    categoryCount === 0 || categoryCount < perPage ? "" :
+                    <Pagination
+                    pageNumber ={currentPage ? currentPage.split('-')[1]:1}
+                    parPage = {perPage}
+                    itemCount = {categoryCount}
+                    path = '/dashborad/all-category'
+                    />
+                    }
+               
             </div>
         </div>
     );

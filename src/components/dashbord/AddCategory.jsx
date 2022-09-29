@@ -8,7 +8,7 @@ const AddCategory = ({ history }) => {
 
     const dispatch = useDispatch();
     const { loader, categoryError, categorySuccess } = useSelector(state => state.dashboradCategory);
-console.log(categorySuccess);
+
     const [state, setState] = useState({
         categoryName: '',
         categoryDescription: ''

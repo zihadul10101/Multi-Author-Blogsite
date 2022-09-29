@@ -8,24 +8,24 @@ import { get_tag_category, add_articale } from "../../store/actions/Dashborad/ar
 import toast, { Toaster } from "react-hot-toast";
 
 const ArticleAdd = ({ history }) => {
-    const { allCategory, allTag, loader, articalError, articalSuccess } = useSelector(state => state.dashboradArtical)
+    const { allCategory, allTag, loader, articleError, articleSuccessMessage } = useSelector(state => state.dashboradArtical)
 
     useEffect(() => {
-        if (articalError && articalError.error) {
-            toast.error(articalError.error)
+        if (articleError && articleError.error) {
+            toast.error(articleError.error)
             dispatch({ type: 'ARTCLE_ADD_FAIL' })
         }
 
-        if (articalSuccess) {
+        if (articleSuccessMessage) {
 
-            toast.success(articalSuccess);
+            toast.success(articleSuccessMessage);
             dispatch({
                 type: 'ARTCLE_SUCCESS_MESSAGE_CLEAR'
             })
             history.push('/dashborad/all-artical')
         }
 
-    }, [articalError, articalSuccess])
+    }, [articleError, articleSuccessMessage])
     const dispatch = useDispatch();
     const [updateBtn, setUpdateBtn] = useState(false);
     const [slug, setSlug] = useState('');
@@ -95,7 +95,7 @@ const ArticleAdd = ({ history }) => {
         formData.append('slug', slug);
         formData.append('text', text);
 
-console.log(formData);
+
         dispatch(add_articale(formData))
     }
     const [text, setText] = useState('')
@@ -106,6 +106,12 @@ console.log(formData);
     useEffect(() => {
         dispatch(get_tag_category())
     }, [])
+    useEffect(()=>{
+        if(articleSuccessMessage){
+            dispatch({type :'ARTCLE_SUCCESS_MESSAGE_CLEAR'})
+            history.push('/dashborad/all-artical');
+        }
+    },[articleSuccessMessage])
     return (
         <div className='add-article'>
             <Toaster
@@ -133,12 +139,12 @@ console.log(formData);
                     <div className="form-group">
                         <label htmlFor="title">Article Title</label>
                         <input onChange={titleHendler} type="text" value={state.title} name="title" placeholder="Article Title" id="title" className="form-control" />
-                        <p className="error">{articalError ? articalError.title : ''}</p>
+                        <p className="error">{articleError ? articleError.title : ''}</p>
                     </div>
                     <div className="form-group">
                         <label htmlFor="slug">Artical Slug</label>
                         <input value={slug} onChange={slugHendle} type="text" placeholder="Artical Slug" className="form-control" name="slug" id="slug" />
-                        <p className="error">{articalError ? articalError.slug : ''}</p>
+                        <p className="error">{articleError ? articleError.slug : ''}</p>
                     </div>
                     {
                         updateBtn ? <button onClick={updateSlug} className='btn'>Update</button> : ''
@@ -150,7 +156,7 @@ console.log(formData);
                                 allCategory.length > 0 ? allCategory.map((c, index) => <option key={index} value={c.tagSlug}>{c.categoryName}</option>) : ''
                             }
                         </select>
-                        <p className="error">{articalError ? articalError.category : ''}</p>
+                        <p className="error">{articleError ? articleError.category : ''}</p>
                     </div>
                     <div className="form-group">
                         <label htmlFor="tag">Tag</label>
@@ -160,7 +166,7 @@ console.log(formData);
                                 allTag.length > 0 ? allTag.map((t, index) => <option key={index} value={t.tagSlug}>{t.tagName}</option>) : ''
                             }
                         </select>
-                        <p className="error">{articalError ? articalError.tag : ''}</p>
+                        <p className="error">{articleError ? articleError.tag : ''}</p>
                     </div>
                     <div className="form-group img-upload">
                         <div className="upload">
@@ -178,7 +184,7 @@ console.log(formData);
                             onBlur={newText => setText(newText)}
                             onChange={newText => { }}
                         />
-                        <p className="error">{articalError ? articalError.text : ''}</p>
+                        <p className="error">{articleError ? articleError.text : ''}</p>
                     </div>
                     <div className="form-group">
                         <label htmlFor="image"> Image</label>
@@ -194,7 +200,7 @@ console.log(formData);
                                 image.img ? <img src={image.img} alt="" /> : ''
                             }
                         </div>
-                        <p className="error">{articalError ? articalError.image : ''}</p>
+                        <p className="error">{articleError ? articleError.image : ''}</p>
                     </div>
                     <div className="form-group">
                         {

@@ -44,7 +44,7 @@ export const articalReducer = (state = initState, action) => {
             articleError: payload.errorMessage
         }
     }
-    if (type === 'ART_SUCCESS_MESSAGE_CLEAR') {
+    if (type === 'ARTCLE_SUCCESS_MESSAGE_CLEAR') {
         return {
             ...state,
             articleSuccessMessage: ''
