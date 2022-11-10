@@ -57,7 +57,7 @@ const ArticleAdd = ({ history }) => {
             imageReader.readAsDataURL(e.target.files[0]);
         }
     }
-    // console.log(image)
+  
     const inputHendle = (e) => {
         setState({
             ...state,
