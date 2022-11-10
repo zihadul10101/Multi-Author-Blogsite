@@ -10,7 +10,7 @@
     "apexcharts": "^3.33.0",
     "axios": "^0.25.0",
     "formidable": "^2.0.1",
-    "html-react-parser": "^1.4.5",
+    "html-react-parser": "^1.4.14",
     "html-to-text": "^8.1.0",
     "jodit": "^3.12.5",
     "jodit-react": "^1.1.18",
